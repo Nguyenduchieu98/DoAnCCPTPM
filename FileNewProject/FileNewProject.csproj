@@ -394,6 +394,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Commom\CommonConstants.cs" />
     <Compile Include="Commom\Login.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -459,6 +460,9 @@
     <Content Include="Views\Shared\Shop.cshtml" />
     <Content Include="Views\Shared\HeadFoot.cshtml" />
     <Content Include="Views\Shared\Admin.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\User\Thank.cshtml" />
+    <Content Include="Views\User\Registration.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -468,7 +472,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
