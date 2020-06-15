@@ -11,26 +11,7 @@ namespace FileNewProject.Controllers
     {
         DoChoiCongNgheEntities1 db = new DoChoiCongNgheEntities1();
         // GET: User
-        [HttpGet]
-        public ActionResult Registration()
-        {
-            return View();
-
-        }
-        [HttpPost]
-        public ActionResult Registration(KhachHang kh)
-        {
-            //BAT LOI BO TRONG
-            if (ModelState.IsValid)
-            {
-                //chen du liệu vào bảng khách hàng
-                db.KhachHangs.Add(kh);
-                //luu vao csdl
-                db.SaveChanges();
-                return RedirectToAction("Thank", "User");
-            }
-            return View();
-        }
+        
 
 
         [HttpGet]
@@ -79,9 +60,6 @@ namespace FileNewProject.Controllers
 
 
 
-        public ActionResult Thank()
-        {
-            return View();
-        }
+
     }
 }
