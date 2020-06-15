@@ -388,17 +388,23 @@
     <Content Include="ThuVien\7.jpg" />
     <Content Include="ThuVien\8.jpg" />
     <Content Include="ThuVien\9.jpg" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Commom\CommonConstants.cs" />
     <Compile Include="Commom\Login.cs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="Controllers\UserController.cs" />
 =======
     <Compile Include="Controllers\HomeController.cs" />
 >>>>>>> origin/trangchu
+=======
+    <Compile Include="Controllers\SearchController.cs" />
+>>>>>>> origin/ngotanthong
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -465,10 +471,14 @@
     <Content Include="Views\Shared\HeadFoot.cshtml" />
     <Content Include="Views\Shared\Admin.cshtml" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Content Include="Views\User\Login.cshtml" />
 =======
     <Content Include="Views\Home\Index.cshtml" />
 >>>>>>> origin/trangchu
+=======
+    <Content Include="Views\Search\SearchResult.cshtml" />
+>>>>>>> origin/ngotanthong
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
