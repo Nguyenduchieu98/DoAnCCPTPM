@@ -398,6 +398,7 @@
     <Compile Include="Commom\Login.cs" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="Controllers\UserController.cs" />
 =======
     <Compile Include="Controllers\HomeController.cs" />
@@ -405,6 +406,9 @@
 =======
     <Compile Include="Controllers\SearchController.cs" />
 >>>>>>> origin/ngotanthong
+=======
+    <Compile Include="Controllers\CategoryController.cs" />
+>>>>>>> origin/Hieu
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -472,6 +476,7 @@
     <Content Include="Views\Shared\Admin.cshtml" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Content Include="Views\User\Login.cshtml" />
 =======
     <Content Include="Views\Home\Index.cshtml" />
@@ -479,6 +484,9 @@
 =======
     <Content Include="Views\Search\SearchResult.cshtml" />
 >>>>>>> origin/ngotanthong
+=======
+    <Content Include="Views\Category\Brand.cshtml" />
+>>>>>>> origin/Hieu
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
