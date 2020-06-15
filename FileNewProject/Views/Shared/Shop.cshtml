@@ -1,0 +1,621 @@
+﻿@{
+    Layout = null;
+}
+@using FileNewProject.Commom;
+@{
+    var session = (Login)Session[CommonConstants.LOGIN_SESSION];
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link rel="stylesheet" href="~/Content/Css/bootstrap.min.css">
+    <!-- Linearicon CSS-->
+    <link rel="stylesheet" href="~/Content/Css/linearicons.min.css">
+    @*<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">*@
+    <!-- Animate CSS-->
+    <link rel="stylesheet" href="~/Content/Css/animate.css">
+    <!-- Owl Carousel CSS-->
+    <link rel="stylesheet" href="~/Content/Css/owl.carousel.min.css">@*QuickView*@
+    <!-- Slick CSS-->
+    <link rel="stylesheet" href="~/Content/Css/slick.css">@*slider product*@
+    <!-- Meanmenu CSS-->
+    <link rel="stylesheet" href="~/Content/Css/meanmenu.min.css">
+    <!-- Easyzoom CSS-->
+    <link rel="stylesheet" href="~/Content/Css/easyzoom.css">
+    <!-- Venobox CSS-->
+    <link rel="stylesheet" href="~/Content/Css/venobox.css">
+    <!-- Jquery Ui CSS-->
+    <link rel="stylesheet" href="~/Content/Css/jquery-ui.css"> @*bang giá*@
+    <!-- Nice Select CSS-->
+    <link rel="stylesheet" href="~/Content/Css/nice-select.css"> @*lua chon dropdown*@
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="~/Content/Css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="~/Content/Css/responsive.css">
+    <!-- Modernizr Js -->
+    <script src="~/Content/~/scripts/Js/modernizr-2.8.3.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="~/Content/Css/nivo-slider.css" rel="stylesheet" />
+</head>
+<body>
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="wrapper">
+        <!--Header Area Start-->
+        <header>
+            <div class="header-container">
+                <div class="header-area header-sticky pt-30 pb-30">
+                    <div class="container">
+                        <div class="row">
+                            <!--Header Logo Start-->
+                            <div class="col-lg-3 col-md-3">
+                                <div class="logo-area">
+                                    <a href="@Url.Action("Index","Home")">
+                                        <img src="~/HinhAnh/logo.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <!--Header Logo End-->
+                            <!--Header Menu And Mini Cart Start-->
+                            <div class="col-lg-9 col-md-9 text-lg-right">
+                                <!--Main Menu Area Start-->
+                                <div class="header-menu">
+                                    <nav>
+                                        <ul class="main-menu">
+                                            <li>
+                                                <a href="@Url.Action("Index","Home")">Trang Chủ</a>
+                                                <!--Dropdown Menu Start-->
+                                                @*<ul class="dropdown">
+                                                        <li><a href="index.html">Home Page One</a></li>
+                                                        <li><a href="index-2.html">Home Page Two</a></li>
+                                                        <li><a href="index-3.html">Home Page Three</a></li>
+                                                        <li><a href="index-4.html">Home Page Four</a></li>
+                                                        <li><a href="index-5.html">Home Page Five</a></li>
+                                                    </ul>*@
+                                                <!--Dropdown Menu End-->
+                                            </li>
+                                            <li><a href="@Url.Action("Gallery","Somethings")">Thư Viện</a></li>
+                                            <li><a href="@Url.Action("FAQ","Somethings")">Câu Hỏi</a></li>
+                                            @*<li><a href="blog.html">Blog</a></li>*@
+
+                                            <li>
+                                                <a href="#">Danh Mục</a>
+                                                <!--Mega Menu Start-->
+                                                <ul class="mega-menu">
+                                                    <li>
+                                                        <a href="#" class="item-link">Hãng Sản Xuất</a>
+                                                        <ul>
+                                                            @Html.Action("Brand", "Category")
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="item-link">Màu Sắc</a>
+                                                        <ul>
+                                                            @Html.Action("Color", "Category")
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="item-link">Shop</a>
+                                                        <ul>
+                                                            @Html.Action("Place", "Category")
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                <!--Mega Menu End-->
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <!--Main Menu Area End-->
+                                <!--Header Option Start-->
+                                <div class="header-option">
+                                    <div class="mini-cart-search">
+                                        @Html.Action("ShoppingCartPartial", "ShoppingCart")
+
+                                        <div class="header-search">
+                                            <div class="search-box">
+                                                <a href="#"><i class="fa fa-search"></i></a>
+                                                <div class="search-dropdown">
+                                                    @using (Html.BeginForm("SearchResult", "Search", FormMethod.Post))
+                                                    {
+                                                        <form action="#">
+                                                            @*<input name="search" id="search" placeholder="" value="Search product..." onblur="if(this.value==''){this.value='Search product...'}" onfocus="if(this.value=='Search product...'){this.value=''}" type="text">*@
+                                                            @Html.TextBox("txtTimKiem", "", htmlAttributes: new { @class = "TextBoxTimKiem", @placeholder = "Nhập vào từ cần tìm" })
+                                                            <button type="submit"><i class="fa fa-search"></i></button>
+
+                                                        </form>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="currency">
+                                            <div class="currency-box">
+                                                <a href="#"><i class="fa fa-th"></i></a>
+                                                <div class="currency-dropdown">
+                                                    <ul class="menu-top-menu">
+                                                        @{
+                                                            if (session != null)
+                                                            {
+                                                                <li><a>Chào: @session.Username</a></li>
+                                                                <li><a href="@Url.Action("ProfileUser","User")">Thông Tin</a></li>
+                                                                <li><a href="@Url.Action("Login","User")">Đăng nhập</a></li>
+                                                                <li><a href="@Url.Action("Registration","User")">Đăng Ký</a></li>
+                                                                <li><a href="@Url.Action("Login","User")">Đăng Xuất</a></li>
+                                                            }
+                                                            else
+                                                            {
+                                                                <li><a href="@Url.Action("ProfileUser","User")">Thông Tin</a></li>
+                                                                <li><a href="@Url.Action("Login","User")">Đăng nhập</a></li>
+                                                                <li><a href="@Url.Action("Registration","User")">Đăng Ký</a></li>
+                                                                <li><a href="@Url.Action("Login","User")">Đăng Xuất</a></li>
+                                                            }
+                                                        }
+                                                    </ul>
+                                                    @*<div class="switcher">
+                                                        <div class="language">
+                                                            <span class="switcher-title">Language: </span>
+                                                            <div class="switcher-menu">
+                                                                <ul>
+                                                                    <li>
+                                                                        <a href="#">English</a>
+                                                                        <ul class="switcher-dropdown">
+                                                                            <li><a href="#">German</a></li>
+                                                                            <li><a href="#">French</a></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="currency">
+                                                            <span class="switcher-title">Currency: </span>
+                                                            <div class="switcher-menu">
+                                                                <ul>
+                                                                    <li>
+                                                                        <a href="#">$ USD</a>
+                                                                        <ul class="switcher-dropdown">
+                                                                            <li><a href="#">€ EUR</a></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>*@
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Header Option End-->
+                            </div>
+                            <!--Header Menu And Mini Cart End-->
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <!--Mobile Menu Area Start-->
+                                <div class="mobile-menu d-lg-none"></div>
+                                <!--Mobile Menu Area End-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+    </div>
+    <!--Header Area End-->
+    <!--Shop Area Start-->
+    <div class="shop-area mb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="shop-layout">
+                        <!--Breadcrumb One Start-->
+                        <div class="breadcrumb-one mb-120">
+                            <div class="breadcrumb-img img-full">
+                                <div class="slider-wrapper theme-bar">
+                                    <div id="slider4" class="nivoSlider">
+                                        <img src="~/HinhAnh/nivo2.png" />
+                                        <img src="~/HinhAnh/nivo.png" />
+                                        <img src="~/HinhAnh/nivo1.png" />
+                                        <img src="~/HinhAnh/nivo3.png" />
+                                        <img src="~/HinhAnh/nivo4.png" />
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!--Breadcrumb One End-->
+                        <!--Grid & List View Start-->
+                        <div class="shop-topbar-wrapper d-md-flex justify-content-md-between align-items-center">
+
+                            <!--Toolbar Short Area Start-->
+                            @using (Html.BeginForm("KetQuaTimKiem", "TimKiemMoi", FormMethod.Post))
+                            {
+                                <div class="toolbar-short-area d-md-flex align-items-center">
+                                    <div class="toolbar-shorter ">
+                                        <label>Tim kiếm:</label>
+                                        <p style="margin-left:30px">
+                                            <select class="wide" name="Gia">
+
+                                                <option value="500">500$ ↓</option>
+                                                <option value="1000">1000$ ↓</option>
+                                                <option value="1500">1500$ ↓</option>
+                                                <option value="2000">2000$ ↓</option>
+                                                <option value="2500">2500$ ↓</option>
+                                                <option value="3000">3000$ ↓</option>
+                                                <option value="3500">3500$ ↓</option>
+                                                <option value="4000">4000$ ↓</option>
+                                            </select>
+                                        </p>
+                                        <p style="margin-left:30px">
+                                            <select class="wide" style="margin-left:20px" name="txtXuatxu">
+
+                                                <option value="Đức">Đức</option>
+                                                <option value="Pháp">Pháp</option>
+                                                <option value="Isarel">Isarel</option>
+                                                <option value="Trung Quốc">Trung Quốc</option>
+                                                <option value="Bờ Biển Ngà">Bờ Biển Ngà</option>
+                                            </select>
+                                        </p>
+                                        <p style="margin-left:30px">
+                                            <select class="wide" style="margin-left:20px" name="txtMausac">
+
+                                                <option value="Đen">Đen</option>
+                                                <option value="Trắng">Trắng</option>
+                                                <option value="Vàng">Vàng</option>
+                                                <option value="Cam">Cam</option>
+                                                <option value="Xanh">Xanh</option>
+                                            </select>
+                                        </p>
+                                        <div style="margin-left:30px">
+                                            <button>Tìm Kiếm</button>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            }
+                            <div style="color:red">
+                                @ViewBag.ThongBao
+                            </div>
+                            <!--Toolbar Short Area End-->
+                        </div>
+                        <!--Grid & List View End-->
+                        <!--Shop Product Start-->
+                        <div class="shop-product">
+                            <div id="myTabContent-2" class="tab-content">
+                                <div id="grid" class="tab-pane fade show active">
+                                    <div class="product-grid-view">
+                                        <div class="row">
+
+                                            <!--Single Product Start-->
+                                            @RenderBody()
+                                            <!--Single Product End-->
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Shop Product End-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Shop Area End-->
+    <!--Brand Area Start-->
+    <div class="col-12">
+        <div class="section-title text-center mb-35">
+            <h3>Sản phẩm mới về</h3>
+        </div>
+    </div>
+
+    <div class="brand-area mb-105">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="brand-active">
+                        <!--Single Brand Start-->
+                        <div class="single-brand img-full">
+                            <a href="#"><img src="~/HinhAnhSP/AnhBia/AnhBia-1.png" alt=""></a>
+                        </div>
+                        <!--Single Brand End-->
+                        <!--Single Brand Start-->
+                        <div class="single-brand img-full">
+                            <a href="#"><img src="~/HinhAnhSP/AnhBia/AnhBia-2.png" alt=""></a>
+                        </div>
+                        <!--Single Brand End-->
+                        <!--Single Brand Start-->
+                        <div class="single-brand img-full">
+                            <a href="#"><img src="~/HinhAnhSP/AnhBia/AnhBia-3.png" alt=""></a>
+                        </div>
+                        <!--Single Brand End-->
+                        <!--Single Brand Start-->
+                        <div class="single-brand img-full">
+                            <a href="#"><img src="~/HinhAnhSP/AnhBia/AnhBia-4.png" alt=""></a>
+                        </div>
+                        <!--Single Brand End-->
+                        <!--Single Brand Start-->
+                        <div class="single-brand img-full">
+                            <a href="#"><img src="~/HinhAnhSP/AnhBia/AnhBia-5.png" alt=""></a>
+                        </div>
+                        <!--Single Brand End-->
+                        <!--Single Brand Start-->
+                        <div class="single-brand img-full">
+                            <a href="#"><img src="~/HinhAnhSP/AnhBia/AnhBia-6.png" alt=""></a>
+                        </div>
+                        <!--Single Brand End-->
+                        <!--Single Brand Start-->
+                        <div class="single-brand img-full">
+                            <a href="#"><img src="~/HinhAnhSP/AnhBia/AnhBia-7.png" alt=""></a>
+                        </div>
+                        <!--Single Brand End-->
+                        <!--Single Brand Start-->
+                        <div class="single-brand img-full">
+                            <a href="#"><img src="~/HinhAnhSP/AnhBia/AnhBia-8.png" alt=""></a>
+                        </div>
+                        <!--Single Brand End-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Brand Area End-->
+    <!--Footer Area Start-->
+    <footer>
+        <div class="footer-container">
+            <!--Footer Top Area Start-->
+            <div class="footer-top-area black-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <!--Single Footer Widget Start-->
+                            <div class="single-footer-widget mb-40">
+                                <div class="footer-title">
+                                    <h3>Tư Vấn </h3>
+                                </div>
+                                <ul class="link-widget">
+                                    <li><a href="about.html">Tìm hiểu về mua trả góp</a></li>
+                                    <li><a href="#">Chính sách bảo hành</a></li>
+                                    <li><a href="#">Chính sách đồi trả</a></li>
+                                    <li><a href="#">Hướng dẫn mua online</a></li>
+                                    <li><a href="shop.html">Hóa đơn điện tử</a></li>
+                                    <li><a href="#">Nội quy cửa hàng</a></li>
+                                    <li><a href="contact.html">Chất lượng phục vụ</a></li>
+                                </ul>
+                            </div>
+                            <!--Single Footer Widget End-->
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <!--Single Footer Widget Start-->
+                            <div class="single-footer-widget mb-40">
+                                <div class="footer-title">
+                                    <h3>Giới thiệu</h3>
+                                </div>
+                                <ul class="link-widget">
+                                    <li><a href="about.html">Giới thiệu công ty</a></li>
+                                    <li><a href="contact.html">Phản hồi</a></li>
+                                    <li><a href="#">Đánh Giá</a></li>
+                                    <li><a href="#">Chi Nhánh</a></li>
+                                    <li><a href="#">Tuyển dụng</a></li>
+                                    <li><a href="#">Bằng Khen</a></li>
+                                    <li><a href="#">Giải Thưởng</a></li>
+                                </ul>
+                            </div>
+                            <!--Single Footer Widget End-->
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <!--Single Footer Widget Start-->
+                            <div class="single-footer-widget mb-40">
+                                <div class="footer-title">
+                                    <h3>Đường dây nóng</h3>
+                                </div>
+                                <ul class="link-widget">
+                                    <li><a href="#">1800.1060 (7:30 - 22:00)</a></li>
+                                    <li><a href="#">1800.1060 (7:30 - 22:00)</a></li>
+                                    <li><a href="#">1800.1060 (7:30 - 22:00)</a></li>
+                                    <li><a href="#">1800.1060 (7:30 - 22:00)</a></li>
+                                    <li><a href="#">1800.1060 (7:30 - 22:00)</a></li>
+                                    <li><a href="#">1800.1060 (7:30 - 22:00)</a></li>
+                                    <li><a href="faq.html">1800.1060 (7:30 - 22:00)</a></li>
+                                </ul>
+                            </div>
+                            <!--Single Footer Widget End-->
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <!--Single Footer Widget Start-->
+                            <div class="single-footer-widget mb-40">
+                                <div class="footer-title">
+                                    <h3>Categories</h3>
+                                </div>
+                                <ul class="link-widget">
+                                    <li><a href="about.html">Giới thiệu công ty</a></li>
+                                    <li><a href="contact.html">Phản hồi</a></li>
+                                    <li><a href="#">Đánh Giá</a></li>
+                                    <li><a href="#">Chi Nhánh</a></li>
+                                    <li><a href="#">Tuyển dụng</a></li>
+                                    <li><a href="#">Bằng Khen</a></li>
+                                    <li><a href="#">Giải Thưởng</a></li>
+                                </ul>
+                            </div>
+                            <!--Single Footer Widget End-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Footer Top Area End-->
+            <!--Footer Middle Area Start-->
+            <div class="footer-middle-area black-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <!--Single Footer Widget Start-->
+                            <div class="single-footer-widget mb-30">
+                                <div class="footer-logo">
+                                    <a href="index.html"><img src="img/logo/logo-footer.png" alt=""></a>
+                                </div>
+                            </div>
+                            <!--Single Footer Widget End-->
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <!--Single Footer Widget Start-->
+                            <div class="single-footer-widget mb-30">
+                                <div class="footer-info">
+                                    <div class="icon">
+                                        <i class="fa fa-home"></i>
+                                    </div>
+                                    <p>Address : No 40 Baria Sreet 15/2 NewYork City, NY, United States.</p>
+                                </div>
+                            </div>
+                            <!--Single Footer Widget End-->
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <!--Single Footer Widget Start-->
+                            <div class="single-footer-widget mb-30">
+                                <div class="footer-info">
+                                    <div class="icon">
+                                        <i class="fa fa-envelope-open-o"></i>
+                                    </div>
+                                    <p>Email: <br>info@yourmail.com</p>
+                                </div>
+                            </div>
+                            <!--Single Footer Widget End-->
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <!--Single Footer Widget Start-->
+                            <div class="single-footer-widget mb-30">
+                                <div class="footer-info">
+                                    +              <div class="icon">
+                                        <i class="fa fa-mobile"></i>
+                                    </div>
+                                    <p>Phone: <br>(+68) 123 456 7890</p>
+                                </div>
+                            </div>
+                            <!--Single Footer Widget End-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Footer Middle Area End-->
+            <!--Footer Bottom Area Start-->
+            <div class="footer-bottom-area black-bg pt-50 pb-50">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!--Footer Payment Start-->
+                            <div class="footer-payments-image">
+                                <img src="img/payment/payment-icon.png" alt="">
+                            </div>
+                            <!--Footer Payment End-->
+                            <!--Footer Menu Start-->
+                            <div class="footer-menu text-center">
+                                <nav>
+                                    <ul>
+                                        <li><a href="#">Site Map</a></li>
+                                        <li><a href="#">Search Terms</a></li>
+                                        <li><a href="#">Advanced Search</a></li>
+                                        <li><a href="#">Orders and Returns</a></li>
+                                        <li><a href="#">Contact Us</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!--Footer Menu End-->
+                            <!--Footer Copyright Start-->
+                            <div class="footer-copyright">
+                                <p>Copyright © <a href="#">Plantmore</a> All Rights Reserved</p>
+                            </div>
+                            <!--Footer Copyright End-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Footer Bottom Area End-->
+        </div>
+    </footer>
+    <!--Footer Area End-->
+    <!-- Modal Area End -->
+    <!--All Js Here-->
+    <!--Jquery 1.12.4-->
+    <script src="~/scripts/Js/jquery-1.12.4.min.js"></script>
+    <!--Popper-->
+    <script src="~/scripts/Js/popper.min.js"></script>
+    <!--Bootstrap-->
+    <script src="~/scripts/Js/bootstrap.min.js"></script>
+    <!--Imagesloaded-->
+    <script src="~/scripts/Js/imagesloaded.pkgd.min.js"></script>
+    <!--Isotope-->
+    <script src="~/scripts/Js/isotope.pkgd.min.js"></script>
+    <!--Waypoints-->
+    <script src="~/scripts/Js/waypoints.min.js"></script>
+    <!--Counterup-->
+    <script src="~/scripts/Js/jquery.counterup.min.js"></script>
+    <!--Carousel-->
+    <script src="~/scripts/Js/owl.carousel.min.js"></script>
+    <!--Slick-->
+    <script src="~/scripts/Js/slick.min.js"></script>
+    <!--Meanmenu-->
+    <script src="~/scripts/Js/jquery.meanmenu.min.js"></script>
+    <!--Easyzoom-->
+    <script src="~/scripts/Js/easyzoom.min.js"></script>
+    <!--Nice Select-->
+    <script src="~/scripts/Js/jquery.nice-select.min.js"></script>
+    <!--ScrollUp-->
+    <script src="~/scripts/Js/jquery.scrollUp.min.js"></script>
+    <!--Wow-->
+    <script src="~/scripts/Js/wow.min.js"></script>
+    <!--Venobox-->
+    <script src="~/scripts/Js/venobox.min.js"></script>
+    <!--Jquery Ui-->
+    <script src="~/scripts/Js/jquery-ui.js"></script>
+    <!--Countdown-->
+    <script src="~/scripts/Js/jquery.countdown.min.js"></script>
+    <!--Plugins-->
+    <script src="~/scripts/Js/plugins.js"></script>
+    <!--Main Js-->
+    <script src="~/scripts/Js/main.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!--nivo slider-->
+    <script src="~/scripts/Js/jquery.nivo.slider.pack.js"></script>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                pauseTime: 2500,
+                controlNavThumbs: true
+            });
+            $('#slider2').nivoSlider({
+                pauseTime: 2000
+            });
+            $('#slider3').nivoSlider({
+                pauseTime: 3500
+            });
+            $('#slider4').nivoSlider({
+                pauseTime: 3000
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $('#slider4').nivoSlider({
+
+            directionNav: false, // Next & Prev navigation
+            controlNav: false, // 1,2,3... navigation
+            controlNavThumbs: false, // Hiển thị ảnh nhỏ thay vì nút tròn hoặc số, nhớ cho link ảnh nhỏ vào thẻ data-thumb
+            pauseOnHover: true, // Dừng slide khi đưa chuột và
+            prevText: 'Prev', // Prev directionNav text
+            nextText: 'Next', // Next directionNav text
+
+        });
+    </script>
+
+</body>
+
+</html>

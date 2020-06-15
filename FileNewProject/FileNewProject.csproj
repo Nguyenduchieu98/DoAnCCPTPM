@@ -1,0 +1,515 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{65658B24-DEB9-4D7D-BEC1-AF14FA54005E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FileNewProject</RootNamespace>
+    <AssemblyName>FileNewProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PayPal, Version=1.9.1.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPal.1.9.1\lib\net451\PayPal.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Css\Admin.css" />
+    <Content Include="Content\Css\animate.css" />
+    <Content Include="Content\Css\bootstrap.min.css" />
+    <Content Include="Content\Css\DeleteProduct.css" />
+    <Content Include="Content\Css\easyzoom.css" />
+    <Content Include="Content\Css\font-awesome.min.css" />
+    <Content Include="Content\Css\History.css" />
+    <Content Include="Content\Css\Index.css" />
+    <Content Include="Content\Css\jquery-ui.css" />
+    <Content Include="Content\Css\jquery.nivo.slider.js" />
+    <Content Include="Content\Css\jquery.nivo.slider.pack.js" />
+    <Content Include="Content\Css\Landing.css" />
+    <Content Include="Content\Css\linearicons.min.css" />
+    <Content Include="Content\Css\Loading.css" />
+    <Content Include="Content\Css\meanmenu.min.css" />
+    <Content Include="Content\Css\nice-select.css" />
+    <Content Include="Content\Css\nivo-slider.css" />
+    <Content Include="Content\Css\owl.carousel.min.css" />
+    <Content Include="Content\Css\QuickView.css" />
+    <Content Include="Content\Css\responsive.css" />
+    <Content Include="Content\Css\Services.css" />
+    <Content Include="Content\Css\slick.css" />
+    <Content Include="Content\Css\style.css" />
+    <Content Include="Content\Css\StyleAdmin.css" />
+    <Content Include="Content\Css\Use.css" />
+    <Content Include="Content\Css\venobox.css" />
+    <Content Include="Content\EditAdmin.css" />
+    <Content Include="Content\jquery.nivo.slider.js" />
+    <Content Include="Content\jquery.nivo.slider.pack.js" />
+    <Content Include="Content\magnific-popup.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="HinhAnhSP\AnhBia\AnhBia-1.png" />
+    <Content Include="HinhAnhSP\AnhBia\AnhBia-10.png" />
+    <Content Include="HinhAnhSP\AnhBia\AnhBia-11.png" />
+    <Content Include="HinhAnhSP\AnhBia\AnhBia-12.png" />
+    <Content Include="HinhAnhSP\AnhBia\AnhBia-13.png" />
+    <Content Include="HinhAnhSP\AnhBia\AnhBia-14.png" />
+    <Content Include="HinhAnhSP\AnhBia\AnhBia-15.png" />
+    <Content Include="HinhAnhSP\AnhBia\AnhBia-16.png" />
+    <Content Include="HinhAnhSP\AnhBia\AnhBia-17.png" />
+    <Content Include="HinhAnhSP\AnhBia\AnhBia-18.png" />
+    <Content Include="HinhAnhSP\AnhBia\AnhBia-19.png" />
+    <Content Include="HinhAnhSP\AnhBia\AnhBia-2.png" />
+    <Content Include="HinhAnhSP\AnhBia\AnhBia-20.png" />
+    <Content Include="HinhAnhSP\AnhBia\AnhBia-21.png" />
+    <Content Include="HinhAnhSP\AnhBia\AnhBia-22.png" />
+    <Content Include="HinhAnhSP\AnhBia\AnhBia-23.png" />
+    <Content Include="HinhAnhSP\AnhBia\AnhBia-24.png" />
+    <Content Include="HinhAnhSP\AnhBia\AnhBia-3.png" />
+    <Content Include="HinhAnhSP\AnhBia\AnhBia-4.png" />
+    <Content Include="HinhAnhSP\AnhBia\AnhBia-5.png" />
+    <Content Include="HinhAnhSP\AnhBia\AnhBia-6.png" />
+    <Content Include="HinhAnhSP\AnhBia\AnhBia-7.png" />
+    <Content Include="HinhAnhSP\AnhBia\AnhBia-8.png" />
+    <Content Include="HinhAnhSP\AnhBia\AnhBia-9.png" />
+    <Content Include="HinhAnhSP\AnhSlide\AnhSlide-1.png" />
+    <Content Include="HinhAnhSP\AnhSlide\AnhSlide-10.png" />
+    <Content Include="HinhAnhSP\AnhSlide\AnhSlide-11.png" />
+    <Content Include="HinhAnhSP\AnhSlide\AnhSlide-12.png" />
+    <Content Include="HinhAnhSP\AnhSlide\AnhSlide-13.png" />
+    <Content Include="HinhAnhSP\AnhSlide\AnhSlide-14.png" />
+    <Content Include="HinhAnhSP\AnhSlide\AnhSlide-15.png" />
+    <Content Include="HinhAnhSP\AnhSlide\AnhSlide-16.png" />
+    <Content Include="HinhAnhSP\AnhSlide\AnhSlide-17.png" />
+    <Content Include="HinhAnhSP\AnhSlide\AnhSlide-18.png" />
+    <Content Include="HinhAnhSP\AnhSlide\AnhSlide-19.png" />
+    <Content Include="HinhAnhSP\AnhSlide\AnhSlide-2.png" />
+    <Content Include="HinhAnhSP\AnhSlide\AnhSlide-20.png" />
+    <Content Include="HinhAnhSP\AnhSlide\AnhSlide-21.png" />
+    <Content Include="HinhAnhSP\AnhSlide\AnhSlide-22.png" />
+    <Content Include="HinhAnhSP\AnhSlide\AnhSlide-23.png" />
+    <Content Include="HinhAnhSP\AnhSlide\AnhSlide-24.png" />
+    <Content Include="HinhAnhSP\AnhSlide\AnhSlide-3.png" />
+    <Content Include="HinhAnhSP\AnhSlide\AnhSlide-4.png" />
+    <Content Include="HinhAnhSP\AnhSlide\AnhSlide-5.png" />
+    <Content Include="HinhAnhSP\AnhSlide\AnhSlide-6.png" />
+    <Content Include="HinhAnhSP\AnhSlide\AnhSlide-7.png" />
+    <Content Include="HinhAnhSP\AnhSlide\AnhSlide-8.png" />
+    <Content Include="HinhAnhSP\AnhSlide\AnhSlide-9.png" />
+    <Content Include="HinhAnhSP\AnhSlid\AnhSlid-1.png" />
+    <Content Include="HinhAnhSP\AnhSlid\AnhSlid-10.png" />
+    <Content Include="HinhAnhSP\AnhSlid\AnhSlid-11.png" />
+    <Content Include="HinhAnhSP\AnhSlid\AnhSlid-12.png" />
+    <Content Include="HinhAnhSP\AnhSlid\AnhSlid-13.png" />
+    <Content Include="HinhAnhSP\AnhSlid\AnhSlid-14.png" />
+    <Content Include="HinhAnhSP\AnhSlid\AnhSlid-15.png" />
+    <Content Include="HinhAnhSP\AnhSlid\AnhSlid-16.png" />
+    <Content Include="HinhAnhSP\AnhSlid\AnhSlid-17.png" />
+    <Content Include="HinhAnhSP\AnhSlid\AnhSlid-18.png" />
+    <Content Include="HinhAnhSP\AnhSlid\AnhSlid-19.png" />
+    <Content Include="HinhAnhSP\AnhSlid\AnhSlid-2.png" />
+    <Content Include="HinhAnhSP\AnhSlid\AnhSlid-20.png" />
+    <Content Include="HinhAnhSP\AnhSlid\AnhSlid-21.png" />
+    <Content Include="HinhAnhSP\AnhSlid\AnhSlid-22.png" />
+    <Content Include="HinhAnhSP\AnhSlid\AnhSlid-23.png" />
+    <Content Include="HinhAnhSP\AnhSlid\AnhSlid-24.png" />
+    <Content Include="HinhAnhSP\AnhSlid\AnhSlid-3.png" />
+    <Content Include="HinhAnhSP\AnhSlid\AnhSlid-4.png" />
+    <Content Include="HinhAnhSP\AnhSlid\AnhSlid-5.png" />
+    <Content Include="HinhAnhSP\AnhSlid\AnhSlid-6.png" />
+    <Content Include="HinhAnhSP\AnhSlid\AnhSlid-7.png" />
+    <Content Include="HinhAnhSP\AnhSlid\AnhSlid-8.png" />
+    <Content Include="HinhAnhSP\AnhSlid\AnhSlid-9.png" />
+    <Content Include="HinhAnhSP\AnhSli\AnhSli-1.png" />
+    <Content Include="HinhAnhSP\AnhSli\AnhSli-10.png" />
+    <Content Include="HinhAnhSP\AnhSli\AnhSli-11.png" />
+    <Content Include="HinhAnhSP\AnhSli\AnhSli-12.png" />
+    <Content Include="HinhAnhSP\AnhSli\AnhSli-13.png" />
+    <Content Include="HinhAnhSP\AnhSli\AnhSli-14.png" />
+    <Content Include="HinhAnhSP\AnhSli\AnhSli-15.png" />
+    <Content Include="HinhAnhSP\AnhSli\AnhSli-16.png" />
+    <Content Include="HinhAnhSP\AnhSli\AnhSli-17.png" />
+    <Content Include="HinhAnhSP\AnhSli\AnhSli-18.png" />
+    <Content Include="HinhAnhSP\AnhSli\AnhSli-19.png" />
+    <Content Include="HinhAnhSP\AnhSli\AnhSli-2.png" />
+    <Content Include="HinhAnhSP\AnhSli\AnhSli-20.png" />
+    <Content Include="HinhAnhSP\AnhSli\AnhSli-21.png" />
+    <Content Include="HinhAnhSP\AnhSli\AnhSli-22.png" />
+    <Content Include="HinhAnhSP\AnhSli\AnhSli-23.png" />
+    <Content Include="HinhAnhSP\AnhSli\AnhSli-24.png" />
+    <Content Include="HinhAnhSP\AnhSli\AnhSli-3.png" />
+    <Content Include="HinhAnhSP\AnhSli\AnhSli-4.png" />
+    <Content Include="HinhAnhSP\AnhSli\AnhSli-5.png" />
+    <Content Include="HinhAnhSP\AnhSli\AnhSli-6.png" />
+    <Content Include="HinhAnhSP\AnhSli\AnhSli-7.png" />
+    <Content Include="HinhAnhSP\AnhSli\AnhSli-8.png" />
+    <Content Include="HinhAnhSP\AnhSli\AnhSli-9.png" />
+    <Content Include="HinhAnhSP\AnhSl\AnhSl-1.png" />
+    <Content Include="HinhAnhSP\AnhSl\AnhSl-10.png" />
+    <Content Include="HinhAnhSP\AnhSl\AnhSl-11.png" />
+    <Content Include="HinhAnhSP\AnhSl\AnhSl-12.png" />
+    <Content Include="HinhAnhSP\AnhSl\AnhSl-13.png" />
+    <Content Include="HinhAnhSP\AnhSl\AnhSl-14.png" />
+    <Content Include="HinhAnhSP\AnhSl\AnhSl-15.png" />
+    <Content Include="HinhAnhSP\AnhSl\AnhSl-16.png" />
+    <Content Include="HinhAnhSP\AnhSl\AnhSl-17.png" />
+    <Content Include="HinhAnhSP\AnhSl\AnhSl-18.png" />
+    <Content Include="HinhAnhSP\AnhSl\AnhSl-19.png" />
+    <Content Include="HinhAnhSP\AnhSl\AnhSl-2.png" />
+    <Content Include="HinhAnhSP\AnhSl\AnhSl-20.png" />
+    <Content Include="HinhAnhSP\AnhSl\AnhSl-21.png" />
+    <Content Include="HinhAnhSP\AnhSl\AnhSl-22.png" />
+    <Content Include="HinhAnhSP\AnhSl\AnhSl-23.png" />
+    <Content Include="HinhAnhSP\AnhSl\AnhSl-24.png" />
+    <Content Include="HinhAnhSP\AnhSl\AnhSl-3.png" />
+    <Content Include="HinhAnhSP\AnhSl\AnhSl-4.png" />
+    <Content Include="HinhAnhSP\AnhSl\AnhSl-5.png" />
+    <Content Include="HinhAnhSP\AnhSl\AnhSl-6.png" />
+    <Content Include="HinhAnhSP\AnhSl\AnhSl-7.png" />
+    <Content Include="HinhAnhSP\AnhSl\AnhSl-8.png" />
+    <Content Include="HinhAnhSP\AnhSl\AnhSl-9.png" />
+    <Content Include="HinhAnh\1.png" />
+    <Content Include="HinhAnh\11-removebg.png" />
+    <Content Include="HinhAnh\2.png" />
+    <Content Include="HinhAnh\3.jpg" />
+    <Content Include="HinhAnh\3.png" />
+    <Content Include="HinhAnh\4.png" />
+    <Content Include="HinhAnh\5.png" />
+    <Content Include="HinhAnh\6.png" />
+    <Content Include="HinhAnh\author.png" />
+    <Content Include="HinhAnh\bg1.jpg" />
+    <Content Include="HinhAnh\bg2.jpg" />
+    <Content Include="HinhAnh\bg3.jpg" />
+    <Content Include="HinhAnh\bg4.jpg" />
+    <Content Include="HinhAnh\bglogin.png" />
+    <Content Include="HinhAnh\check.png" />
+    <Content Include="HinhAnh\denvau.jpg" />
+    <Content Include="HinhAnh\logo.png" />
+    <Content Include="HinhAnh\nivo.png" />
+    <Content Include="HinhAnh\nivo1.png" />
+    <Content Include="HinhAnh\nivo2.png" />
+    <Content Include="HinhAnh\nivo3.png" />
+    <Content Include="HinhAnh\nivo4.png" />
+    <Content Include="Models\QuanLyShop.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLyShop.edmx</DependentUpon>
+      <LastGenOutput>QuanLyShop.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\QuanLyShop.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLyShop.edmx</DependentUpon>
+      <LastGenOutput>QuanLyShop.cs</LastGenOutput>
+    </Content>
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\QuanLyShop.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuanLyShop.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\QuanLyShop.edmx.diagram">
+      <DependentUpon>QuanLyShop.edmx</DependentUpon>
+    </Content>
+    <None Include="scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="scripts\jquery-1.10.2.js" />
+    <Content Include="scripts\jquery-1.10.2.min.js" />
+    <Content Include="scripts\Js\bootstrap.min.js" />
+    <Content Include="scripts\Js\easyzoom.min.js" />
+    <Content Include="scripts\Js\imagesloaded.pkgd.min.js" />
+    <Content Include="scripts\Js\isotope.pkgd.min.js" />
+    <Content Include="scripts\Js\jquery-1.12.4.min.js" />
+    <Content Include="scripts\Js\jquery-ui.js" />
+    <Content Include="scripts\Js\jquery.countdown.min.js" />
+    <Content Include="scripts\Js\jquery.counterup.min.js" />
+    <Content Include="scripts\Js\jquery.magnific-popup.min.js" />
+    <Content Include="scripts\Js\jquery.meanmenu.min.js" />
+    <Content Include="scripts\Js\jquery.min.js" />
+    <Content Include="scripts\Js\jquery.nice-select.min.js" />
+    <Content Include="scripts\Js\jquery.nivo.slider.pack.js" />
+    <Content Include="scripts\Js\jquery.scrollUp.min.js" />
+    <Content Include="scripts\Js\main.js" />
+    <Content Include="scripts\Js\modernizr-2.8.3.min.js" />
+    <Content Include="scripts\Js\owl.carousel.min.js" />
+    <Content Include="scripts\Js\pace.js" />
+    <Content Include="scripts\Js\plugins.js" />
+    <Content Include="scripts\Js\popper.min.js" />
+    <Content Include="scripts\Js\slick.min.js" />
+    <Content Include="scripts\Js\TweenMax.min.js" />
+    <Content Include="scripts\Js\venobox.min.js" />
+    <Content Include="scripts\Js\waypoints.min.js" />
+    <Content Include="scripts\Js\wow.min.js" />
+    <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="ThuVien\1.jpg" />
+    <Content Include="ThuVien\10.jpg" />
+    <Content Include="ThuVien\11.jpg" />
+    <Content Include="ThuVien\12.jpg" />
+    <Content Include="ThuVien\13.jpg" />
+    <Content Include="ThuVien\14.jpg" />
+    <Content Include="ThuVien\15.jpg" />
+    <Content Include="ThuVien\16.jpg" />
+    <Content Include="ThuVien\2.jpg" />
+    <Content Include="ThuVien\3.jpg" />
+    <Content Include="ThuVien\4.jpg" />
+    <Content Include="ThuVien\5.jpg" />
+    <Content Include="ThuVien\6.jpg" />
+    <Content Include="ThuVien\7.jpg" />
+    <Content Include="ThuVien\8.jpg" />
+    <Content Include="ThuVien\9.jpg" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Commom\CommonConstants.cs" />
+    <Compile Include="Commom\Login.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChiTietDonHang.cs">
+      <DependentUpon>QuanLyShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Configuration.cs" />
+    <Compile Include="Models\DonHang.cs">
+      <DependentUpon>QuanLyShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KhachHang.cs">
+      <DependentUpon>QuanLyShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Logger.cs" />
+    <Compile Include="Models\MauSac.cs">
+      <DependentUpon>QuanLyShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NhaSanXuat.cs">
+      <DependentUpon>QuanLyShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NoiSanXuat.cs">
+      <DependentUpon>QuanLyShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaypalConfiguration.cs" />
+    <Compile Include="Models\PaypalLogger.cs" />
+    <Compile Include="Models\QuanLyShop.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyShop.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QuanLyShop.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QuanLyShop.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyShop.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SanPham.cs">
+      <DependentUpon>QuanLyShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ShoppingCart.cs" />
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>QuanLyShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Wishlist.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Shared\Shop.cshtml" />
+    <Content Include="Views\Shared\HeadFoot.cshtml" />
+    <Content Include="Views\Shared\Admin.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59143</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59143/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

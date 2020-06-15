@@ -1,0 +1,17 @@
+﻿   .pagination a {
+    border: 3px solid white;
+    background-color: #5ea56d;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.pagination a:hover
+{
+ background-color:transparent;   
+}
+
+.PhanTrang li 
+{
+    float:right;
+    display: inline;
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="abf4b5fe73d8443686fa0934fdaeb7cd" Name="Diagram1">
+        <EntityTypeShape EntityType="DoChoiCongNgheModel.ChiTietDonHang" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoChoiCongNgheModel.DonHang" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoChoiCongNgheModel.KhachHang" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoChoiCongNgheModel.MauSac" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoChoiCongNgheModel.NhaSanXuat" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoChoiCongNgheModel.NoiSanXuat" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoChoiCongNgheModel.SanPham" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoChoiCongNgheModel.sysdiagram" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="DoChoiCongNgheModel.FK_ChiTietDonHang_DonHang" ManuallyRouted="false" />
+        <AssociationConnector Association="DoChoiCongNgheModel.FK_ChiTietDonHang_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="DoChoiCongNgheModel.FK_DonHang_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="DoChoiCongNgheModel.FK_SanPham_MauSac" ManuallyRouted="false" />
+        <AssociationConnector Association="DoChoiCongNgheModel.FK_SanPham_NhaSanXuat" ManuallyRouted="false" />
+        <AssociationConnector Association="DoChoiCongNgheModel.FK_SanPham_NoiSanXuat" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

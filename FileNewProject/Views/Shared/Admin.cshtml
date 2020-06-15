@@ -1,0 +1,225 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link rel="stylesheet" href="~/Content/Css/bootstrap.min.css">
+    <!-- Linearicon CSS-->
+    <link rel="stylesheet" href="~/Content/Css/linearicons.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- Animate CSS-->
+    <link rel="stylesheet" href="~/Content/Css/animate.css">
+    <!-- Owl Carousel CSS-->
+    <link rel="stylesheet" href="~/Content/Css/owl.carousel.min.css">@*QuickView*@
+    <!-- Slick CSS-->
+    <link rel="stylesheet" href="~/Content/Css/slick.css">@*slider product*@
+    <!-- Meanmenu CSS-->
+    <link rel="stylesheet" href="~/Content/Css/meanmenu.min.css">
+    <!-- Easyzoom CSS-->
+    <link rel="stylesheet" href="~/Content/Css/easyzoom.css">
+    <!-- Venobox CSS-->
+    <link rel="stylesheet" href="~/Content/Css/venobox.css">
+    <!-- Jquery Ui CSS-->
+    <link rel="stylesheet" href="~/Content/Css/jquery-ui.css"> @*bang giá*@
+    <!-- Nice Select CSS-->
+    <link rel="stylesheet" href="~/Content/Css/nice-select.css"> @*lua chon dropdown*@
+    <!-- Style CSS -->
+    <link href="~/Content/Css/StyleAdmin.css" rel="stylesheet" />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="~/Content/Css/responsive.css">
+    <!-- Modernizr Js -->
+    <script src="~/Content/~/scripts/Js/modernizr-2.8.3.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="wrapper">
+        <!--Header Area Start-->
+        <header>
+            <div class="header-container">
+                <div class="header-area header-sticky pt-30 pb-30">
+                    <div class="container">
+                        <div class="row">
+                            <!--Header Logo Start-->
+                            <div class="col-lg-3 col-md-3">
+                                <div class="logo-area">
+                                    <a href="@Url.Action("Admin","Admin")">
+                                        <img src="~/HinhAnh/logo.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <!--Header Logo End-->
+                            <!--Header Menu And Mini Cart Start-->
+                            <div class="col-lg-9 col-md-9 text-lg-right">
+                                <!--Main Menu Area Start-->
+                                <div class="header-menu">
+                                    <nav>
+                                        <ul class="main-menu">
+                                            <li>
+                                                <a href="@Url.Action("Admin","Admin")">Trang Quản Lý</a>
+                                                <!--Dropdown Menu Start-->
+                                                @*<ul class="dropdown">
+                <li><a href="index.html">Home Page One</a></li>
+                <li><a href="index-2.html">Home Page Two</a></li>
+                <li><a href="index-3.html">Home Page Three</a></li>
+                <li><a href="index-4.html">Home Page Four</a></li>
+                <li><a href="index-5.html">Home Page Five</a></li>
+            </ul>*@
+                                                <!--Dropdown Menu End-->
+                                            </li>
+                                            <li><a href="@Url.Action("Statistical","Index")">Thống Kê</a></li>
+                                            <li><a href="@Url.Action("QLdonhang","AdminQLDONHANG")">Quản Lý Đơn Hàng</a></li>
+
+                                            <li>
+                                                <a href="#">Danh Mục</a>
+                                                <!--Mega Menu Start-->
+                                                <ul class="mega-menu">
+                                                    <li>
+                                                        <a href="#" class="item-link">Hãng Sản Xuất</a>
+                                                        <ul>
+                                                            @Html.Action("Brand", "Category")
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="item-link">Màu Sắc</a>
+                                                        <ul>
+                                                            @Html.Action("Color", "Category")
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="item-link">Shop</a>
+                                                        <ul>
+                                                            @Html.Action("Place", "Category")
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                <!--Mega Menu End-->
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <!--Main Menu Area End-->
+                                <!--Header Option Start-->
+                                <div class="header-option">
+                                    <div class="mini-cart-search">
+                                        <div class="header-search">
+                                            <div class="search-box">
+                                                <a href="#"><i class="fa fa-search"></i></a>
+                                                <div class="search-dropdown">
+                                                    @using (Html.BeginForm("SearchAdminResult", "Search", FormMethod.Post))
+                                                    {
+                                                        <form action="#">
+                                                            @*<input name="search" id="search" placeholder="" value="Search product..." onblur="if(this.value==''){this.value='Search product...'}" onfocus="if(this.value=='Search product...'){this.value=''}" type="text">*@
+                                                            @Html.TextBox("txtTimKiem", "", htmlAttributes: new { @class = "TextBoxTimKiem", @placeholder = "Nhập vào từ cần tìm" })
+                                                            <button type="submit"><i class="fa fa-search"></i></button>
+
+                                                        </form>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="currency">
+                                            <div class="currency-box">
+                                                <a href="#"><i class="fa fa-th"></i></a>
+                                                <div class="currency-dropdown">
+                                                    <img src="~/HinhAnh/author.png" />
+                                                    <ul class="menu-top-menu">
+                                                        
+                                                        <li><a href="@Url.Action("ProfileUser","User")">Xin Chào: Đặng Phước Lộc</a></li>
+                                                        <li><a href="@Url.Action("Login","User")">Đăng nhập</a></li>
+                                                        <li><a href="@Url.Action("Registration","User")">Đăng Ký</a></li>
+                                                        <li><a href="@Url.Action("Login","User")">Đăng Xuất</a></li>
+                                                    </ul>                                             
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Header Option End-->
+                            </div>
+                            <!--Header Menu And Mini Cart End-->
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <!--Mobile Menu Area Start-->
+                                <div class="mobile-menu d-lg-none"></div>
+                                <!--Mobile Menu Area End-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--Header Area End-->
+        <!--Shop Area Start-->
+        <div class="shop-area mb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="shop-layout">
+                            <!--Breadcrumb One Start-->
+                            <!--Breadcrumb One End-->
+                            <!--Grid & List View Start-->
+                           
+                                    <!--Pagination Start-->
+                                    <!--Pagination End-->
+                            @RenderBody()
+                            <!--Shop Product End-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Shop Area End-->
+    </div>
+
+ 
+    <!--All Js Here-->
+    <!--Jquery 1.12.4-->
+    <script src="~/scripts/Js/jquery-1.12.4.min.js"></script>
+    <!--Popper-->
+    <script src="~/scripts/Js/popper.min.js"></script>
+    <!--Bootstrap-->
+    <script src="~/scripts/Js/bootstrap.min.js"></script>
+    <!--Imagesloaded-->
+    <script src="~/scripts/Js/imagesloaded.pkgd.min.js"></script>
+    <!--Isotope-->
+    <script src="~/scripts/Js/isotope.pkgd.min.js"></script>
+    <!--Waypoints-->
+    <script src="~/scripts/Js/waypoints.min.js"></script>
+    <!--Counterup-->
+    <script src="~/scripts/Js/jquery.counterup.min.js"></script>
+    <!--Carousel-->
+    <script src="~/scripts/Js/owl.carousel.min.js"></script>
+    <!--Slick-->
+    <script src="~/scripts/Js/slick.min.js"></script>
+    <!--Meanmenu-->
+    <script src="~/scripts/Js/jquery.meanmenu.min.js"></script>
+    <!--Easyzoom-->
+    <script src="~/scripts/Js/easyzoom.min.js"></script>
+    <!--Nice Select-->
+    <script src="~/scripts/Js/jquery.nice-select.min.js"></script>
+    <!--ScrollUp-->
+    <script src="~/scripts/Js/jquery.scrollUp.min.js"></script>
+    <!--Wow-->
+    <script src="~/scripts/Js/wow.min.js"></script>
+    <!--Venobox-->
+    <script src="~/scripts/Js/venobox.min.js"></script>
+    <!--Jquery Ui-->
+    <script src="~/scripts/Js/jquery-ui.js"></script>
+    <!--Countdown-->
+    <script src="~/scripts/Js/jquery.countdown.min.js"></script>
+    <!--Plugins-->
+    <script src="~/scripts/Js/plugins.js"></script>
+    <!--Main Js-->
+    <script src="~/scripts/Js/main.js"></script>
+</body>
+</html>
+

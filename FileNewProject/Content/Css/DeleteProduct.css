@@ -1,0 +1,30 @@
+﻿
+
+    .promo-box {
+        width:auto
+    }
+    .player .track {
+        max-width:170px
+    }
+
+.center {
+    text-align:center;
+}
+#main {
+    font-family:"Lucida Grande", "Helvetica Neue", Helvetica
+}
+#error h1 {
+    color:#1d1d1d;
+    font-size:36px;
+    font-weight:bold;
+    text-shadow:0 1px 0 #414141;
+    margin-top:150px;
+    margin-right:100px;
+    text-align:right;
+}
+#error-monster-1 {
+    margin-top:45px;
+    background:url(http://open.spotify.com/static/images/hole.png);
+    width:235px;
+    height:237px;
+}
