@@ -1,0 +1,172 @@
+﻿@using FileNewProject.Models;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<SanPham>
+<link href="~/Content/Css/Index.css" rel="stylesheet" />
+@{
+    Layout = "~/Views/Shared/Shop.cshtml";
+    ViewBag.Title = "Index";
+}
+
+@{int i = 0;}
+@foreach (var item in Model)
+{
+    i++;
+    <div class="col-md-4 col-lg-3">
+        <div class="single-product mb-25">
+            <div class="product-img img-full">
+                <a href="@Url.Action("ViewDetails","Home",new { @MaDrone = item.MaSP })">
+                    <img src="@Url.Content("~/HinhAnhSP/AnhBia/"+item.AnhBia)" alt="">
+                </a>
+                <span class="onsale">Mới</span>
+                @*<div class="product-action">
+                        <ul>
+                            <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
+                        </ul>
+                    </div>*@
+            </div>
+            <div class="product-content">
+                <h2><a href="@Url.Action("ViewDetails","Home",new { @MaDrone = item.MaSP })">@item.TenSP</a></h2>
+                <div class="product-price">
+                    <div class="price-box">
+                        <span class="regular-price">@String.Format("{0:0,0}", item.GiaBan) $</span>
+                    </div>
+
+                    @using (Html.BeginForm("InsertShoppingCart", "ShoppingCart", new { @iMaDrone = item.MaSP, @strURL = Request.Url.ToString() }))
+                    {
+                        <div class="add-to-cart">
+                            <button class="product-btn" data-text="add to cart">Mua Hàng</button>
+                        </div>
+
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*<div class="modal fade" id="open-modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fas fa-window-close"></i></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <!--Modal Img-->
+                            <div class="col-md-5">
+                                <!--Modal Tab Content Start-->
+                                <div class="tab-content product-details-large" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="single-slide1" role="tabpanel" aria-labelledby="single-slide-tab-1">
+                                        <!--Single Product Image Start-->
+                                        <div class="single-product-img img-full">
+                                            <img src="@Url.Content("~/HinhAnhSP/AnhBia/"+item.AnhBia)" alt="">
+                                        </div>
+                                        <!--Single Product Image End-->
+                                    </div>
+                                    <div class="tab-pane fade" id="single-slide2" role="tabpanel" aria-labelledby="single-slide-tab-2">
+                                        <!--Single Product Image Start-->
+                                        <div class="single-product-img img-full">
+                                            <img src="@Url.Content("~/HinhAnhSP/AnhSl/"+item.AnhSl)" alt="">
+                                        </div>
+                                        <!--Single Product Image End-->
+                                    </div>
+                                    <div class="tab-pane fade" id="single-slide3" role="tabpanel" aria-labelledby="single-slide-tab-3">
+                                        <!--Single Product Image Start-->
+                                        <div class="single-product-img img-full">
+                                            <img src="@Url.Content("~/HinhAnhSP/AnhSli/"+item.AnhSli)" alt="">
+                                        </div>
+                                        <!--Single Product Image End-->
+                                    </div>
+                                    <div class="tab-pane fade" id="single-slide4" role="tabpanel" aria-labelledby="single-slide-tab-4">
+                                        <!--Single Product Image Start-->
+                                        <div class="single-product-img img-full">
+                                            <img src="@Url.Content("~/HinhAnhSP/AnhSlid/"+item.AnhSlid)" alt="">
+                                        </div>
+                                        <!--Single Product Image End-->
+                                    </div>
+                                    <div class="tab-pane fade" id="single-slide5" role="tabpanel" aria-labelledby="single-slide-tab-4">
+                                        <!--Single Product Image Start-->
+                                        <div class="single-product-img img-full">
+                                            <img src="@Url.Content("~/HinhAnhSP/AnhSlide/"+item.AnhSlide)" alt="">
+                                        </div>
+                                        <!--Single Product Image End-->
+                                    </div>
+
+                                </div>
+                                <!--Modal Content End-->
+                                <!--Modal Tab Menu Start-->
+                                <div class="single-product-menu">
+                                    <div class="nav single-slide-menu owl-carousel" role="tablist">
+                                        <div class="single-tab-menu img-full">
+                                            <a class="active" data-toggle="tab" id="single-slide-tab-1" href="#single-slide1"><img src="@Url.Content("~/HinhAnhSP/AnhBia/"+item.AnhBia)" alt=""></a>
+                                        </div>
+                                        <div class="single-tab-menu img-full">
+                                            <a data-toggle="tab" id="single-slide-tab-2" href="#single-slide2"><img src="@Url.Content("~/HinhAnhSP/AnhSl/"+item.AnhSl)" alt=""></a>
+                                        </div>
+                                        <div class="single-tab-menu img-full">
+                                            <a data-toggle="tab" id="single-slide-tab-3" href="#single-slide3"><img src="@Url.Content("~/HinhAnhSP/AnhSli/"+item.AnhSli)" alt=""></a>
+                                        </div>
+                                        <div class="single-tab-menu img-full">
+                                            <a data-toggle="tab" id="single-slide-tab-4" href="#single-slide4"><img src="@Url.Content("~/HinhAnhSP/AnhSlid/"+item.AnhSlid)" alt=""></a>
+                                        </div>
+                                        <div class="single-tab-menu img-full">
+                                            <a data-toggle="tab" id="single-slide-tab-5" href="#single-slide5"><img src="@Url.Content("~/HinhAnhSP/AnhSlide/"+item.AnhSlide)" alt=""></a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!--Modal Tab Menu End-->
+                            </div>
+                            <!--Modal Img-->
+                            <!--Modal Content-->
+                            <div class="col-md-7">
+                                <div class="modal-product-info">
+                                    <h1>@item.TenSP</h1>
+                                    <div class="modal-product-price">
+                                        <span class="new-price">@String.Format("{0:0,0}", item.GiaBan) VND</span>
+                                    </div>
+                                    <div class="add-to-cart quantity">
+                                        <form class="add-quantity" action="#">
+                                            <div class="modal-quantity">
+                                                <input type="number" value="1">
+                                            </div>
+
+                                        </form>
+                                        @using (Html.BeginForm("InsertShoppingCart", "ShoppingCart", new { @iMaDrone = item.MaSP, @strURL = Request.Url.ToString() }))
+                                        {
+                                            <div class="add-to-link">
+                                                <button class="product-btn" data-text="add to cart">add to cart</button>
+                                            </div>
+                                        }
+                                    </div>
+                                    <div class="cart-description">
+                                        <p>@item.TenSP là chiếc máy bay điều khiển nhỏ gọn nhưng vô cùng mạnh mẽ, giúp bạn có thể thoải mái tung hành những ý tưởng trên bầu trời một cách dễ dàng mà không gặp bất kỳ trở ngại nào. Những chi tiết phức tạp được ẩn sau kích thước nhỏ gọn, tất cả đã tạo nên DJI Mavic Pro - một trong những chiếc camera bay tinh xảo nhất. Với bộ vi xử lý 24 nhân hiệu năng cao, hệ thống truyền tải dữ liệu hoàn toàn mới với phạm vi hoạt động lên đến 7km. Bên cạnh đó, DJI Mavic Pro còn được trang bị 5 cảm biến hình ảnh, camera 4K chống rung và gimbal 3 trục.</p>
+                                    </div>
+                                    <div class="social-share">
+                                        <h3>Chia Sẻ Thông Tin Sản Phẩm</h3>
+                                        <ul class="socil-icon2">
+                                            <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-pinterest-square"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Modal Content-->
+                        </div>
+                        <!--Modal Content-->
+                    </div>
+                </div>
+            </div>
+        </div>*@
+    if (i % 3 == 0)
+    {
+        <div style="clear:both"></div>
+    }
+}
+
+<div class="PhanTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+</div>
