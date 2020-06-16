@@ -20,7 +20,17 @@ namespace FileNewProject.Controllers
             int pageNumber = (page ?? 1);
             return View(db.SanPhams.ToList().OrderByDescending(n => n.GiaBan).ToPagedList(pageNumber, pageSize));
         }
+	public ActionResult ViewDetails(int MaDrone = 0)
+        {
+            SanPham sanpham = db.SanPhams.SingleOrDefault(n => n.MaSP == MaDrone);
+            if(sanpham ==null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(sanpham);
+        }
         
-
+	
     }
 }
