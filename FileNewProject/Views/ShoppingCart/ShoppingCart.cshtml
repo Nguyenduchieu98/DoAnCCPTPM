@@ -1,0 +1,70 @@
+﻿@using FileNewProject.Models
+@model List<ShoppingCart>
+@{
+    ViewBag.Title = "ShoppingCart";
+    Layout = "~/Views/Shared/HeadFoot.cshtml";
+}
+
+<!--Shopping Cart Area Strat-->
+
+<div class="Shopping-cart-area mb-110">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form action="#">
+                    <div class="table-content table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="plantmore-product-remove">Mã sản phẩm</th>
+                                    <th class="plantmore-product-thumbnail">Hình Ảnh</th>
+                                    <th class="cart-product-name">Tên sản phẩm</th>
+                                    <th class="plantmore-product-price">Giá bán</th>
+                                    <th class="plantmore-product-quantity">Số lượng</th>
+                                    <th class="plantmore-product-subtotal">Thành tiền</th>
+                                </tr>
+                            </thead>
+                        @foreach (var item in Model)
+                        {
+                            <tbody>
+                                <tr>
+                                    <td class="plantmore-product-remove"><a href="#">@item.iMaDrone</a></td>
+                                    <td class="plantmore-product-thumbnail"><a href="@Url.Action("ViewDetails", "Home", new { @MaDrone = item.iMaDrone})"><img src="@Url.Content("~/HinhAnhSP/AnhBia/"+item.sAnhBia)" width="90" height="90" alt=""></a></td>
+                                    <td class="plantmore-product-name"><a href="#">@item.sTenDrone</a></td>
+                                    <td class="plantmore-product-price"><span class="amount">@String.Format("{0:0,0}", item.dDonGia) $</span></td>
+                                    <td class="plantmore-product-quantity">
+                                        @item.iSoLuong
+                                    </td>
+                                    <td class="product-subtotal"><span class="amount">@String.Format("{0:0,0}", item.ThanhTien) $</span></td>
+                                </tr>
+                            </tbody>
+                        }
+                        </table>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3 ml-auto">
+                            <div class="cart-page-total">  
+                                <a href="@Url.Action("EditShoppingCart","ShoppingCart")">Chỉnh Sửa Giỏ Hàng</a>
+                            </div>
+                        </div>
+                        <div class="col-md-9 ml-auto">
+                            <div class="cart-page-total">
+                                <a href="@Url.Action("Checkout","ShoppingCart")">Kiểm Tra Thông Tin</a>
+                            </div>
+                        </div>
+                    
+                    </div>
+
+                    <div class="col-md-6 ml-auto">
+                        <div class="cart-page-total">
+                            <a href="@Url.Action("PaymentWithPayPal","ShoppingCart")">Thanh Toán Paypal</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
