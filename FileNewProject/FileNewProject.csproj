@@ -397,6 +397,7 @@
     <Compile Include="Commom\CommonConstants.cs" />
     <Compile Include="Commom\Login.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\TimKiemMoiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -463,6 +464,7 @@
     <Content Include="Views\Shared\HeadFoot.cshtml" />
     <Content Include="Views\Shared\Admin.cshtml" />
     <Content Include="Views\Search\SearchResult.cshtml" />
+    <Content Include="Views\TimKiemMoi\KetQuaTimkiem.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
