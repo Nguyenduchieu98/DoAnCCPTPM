@@ -79,7 +79,7 @@
                                             <li>
                                                 <a href="#">Danh Mục</a>
                                                 <!--Mega Menu Start-->
-                                                <ul class="mega-menu">
+                                                @*<ul class="mega-menu">
                                                     <li>
                                                         <a href="#" class="item-link">Hãng Sản Xuất</a>
                                                         <ul>
@@ -98,7 +98,7 @@
                                                             @Html.Action("Place", "Category")
                                                         </ul>
                                                     </li>
-                                                </ul>
+                                                </ul>*@
                                                 <!--Mega Menu End-->
                                             </li>
                                         </ul>
@@ -111,17 +111,17 @@
                                         <div class="header-search">
                                             <div class="search-box">
                                                 <a href="#"><i class="fa fa-search"></i></a>
-                                                <div class="search-dropdown">
+                                                @*<div class="search-dropdown">
                                                     @using (Html.BeginForm("SearchAdminResult", "Search", FormMethod.Post))
                                                     {
                                                         <form action="#">
-                                                            @*<input name="search" id="search" placeholder="" value="Search product..." onblur="if(this.value==''){this.value='Search product...'}" onfocus="if(this.value=='Search product...'){this.value=''}" type="text">*@
+                                                          
                                                             @Html.TextBox("txtTimKiem", "", htmlAttributes: new { @class = "TextBoxTimKiem", @placeholder = "Nhập vào từ cần tìm" })
                                                             <button type="submit"><i class="fa fa-search"></i></button>
 
                                                         </form>
                                                     }
-                                                </div>
+                                                </div>*@
                                             </div>
                                         </div>
 
