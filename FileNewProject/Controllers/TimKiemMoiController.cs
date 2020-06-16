@@ -48,7 +48,7 @@ namespace FileNewProject.Controllers
             else
             if (sGia == 0)
             {
-                ViewBag.ThongBao = "Bạn phải chọn giá";
+                ViewBag.ThongBao = "Bạn phải chọn giá.";
 
             }
             else
