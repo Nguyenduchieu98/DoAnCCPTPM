@@ -1,0 +1,71 @@
+﻿@using FileNewProject.Models
+@model List<ShoppingCart>
+@{
+    ViewBag.Title = "EditShoppingCart";
+    Layout = "~/Views/Shared/HeadFoot.cshtml";
+}
+
+<div class="Shopping-cart-area mb-110">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="table-content table-responsive">
+                    <table class="table">
+                        <tr>
+                            <td>Mã sãn phẩm</td>
+
+                            <td>Tên sản phẩm</td>
+
+                            <td>Ảnh bìa</td>
+
+                            <td>Đơn giá</td>
+
+                            <td>Số lượng</td>
+
+                            <td>Thành tiền</td>
+
+                            <td>Cập Nhập</td>
+
+                            <td>Xóa</td>
+
+                        </tr>
+
+
+                        @foreach (var item in Model)
+                        {
+
+                            <tr>
+                                <td>@item.iMaDrone</td>
+                                <td>@item.sTenDrone</td>
+
+                                <td><img src="@Url.Content("~/HinhAnhSP/AnhBia/"+item.sAnhBia)" width="50" height="50" /></td>
+
+                                <td>
+                                    @String.Format("{0:0,0}", item.dDonGia) VNĐ
+                                </td>
+                                @*Chỉnh sửa giỏ hàng gọi về action CapNhatGioHang*@
+                                @using (Html.BeginForm("UpdateShoppingCart", "ShoppingCart", new { @iMaSP = item.iMaDrone }))
+                                {
+                                    <td>@Html.TextBox("txtSoLuong", item.iSoLuong) </td>
+
+
+
+
+                                    <td>@String.Format("{0:0,0}", item.ThanhTien) VNĐ</td>
+                                    <td><input type="submit" value="Cập nhật" /></td>
+                                    <td>
+
+                                        @*Xóa giỏ hàng gọi về Action XoaGioHang*@
+                                        @Html.ActionLink("X", "DeleteShoppingCart", new { @iMaSP = item.iMaDrone })
+                                    </td>
+                                }
+                            </tr>
+
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+                         

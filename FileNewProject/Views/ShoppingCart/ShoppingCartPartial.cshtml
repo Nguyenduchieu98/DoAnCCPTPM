@@ -1,0 +1,18 @@
+﻿<div class="mini-cart">
+    <a href="#">
+        <span class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-quantity">@ViewBag.TongSoLuong</span>
+        </span>
+        <span class="cart-title">Giỏ Hàng <br><strong>@ViewBag.TongTien</strong></span>
+    </a>
+    <!--Cart Dropdown Start-->
+    <div class="cart-dropdown">
+
+        <p class="cart-btn">
+            <a href="@Url.Action("ShoppingCart","ShoppingCart")">Xem Giỏ Hàng</a>
+            <a href="@Url.Action("Wishlist","ShoppingCart")">Yêu Thích</a>
+        </p>
+    </div>
+    <!--Cart Dropdown End-->
+</div>

@@ -1,0 +1,187 @@
+﻿<link href="~/Content/Css/Use.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "Use";
+    Layout = null;
+}
+
+<script src="https://jonathannicol.com/projects/js/modernizr.custom.37797.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<div id="wrapper">
+    <header id="branding">
+        <h1>The history of aeronautics</h1>
+    </header>
+    <nav id="primary">
+        <ul>
+            <li>
+                <h1>First manned flights</h1>
+                <a class="manned-flight" href="#manned-flight">View</a>
+            </li>
+            <li>
+                <h1>The frameless parachute</h1>
+                <a class="frameless-parachute" href="#frameless-parachute">View</a>
+            </li>
+            <li>
+                <h1>Over the English Channel</h1>
+                <a class="english-channel" href="#english-channel">View</a>
+            </li>
+            <li>
+                <h1>About</h1>
+                <a class="about" href="#about">View</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="content">
+        <article id="manned-flight">
+            <header>
+                <h1>First manned flights</h1>
+            </header>
+            <p>The first clearly recorded instance of a balloon carrying passengers used hot air to generate buoyancy and was built by the brothers Joseph-Michel and Jacques-Etienne Montgolfier in Annonay, France. After experimenting with unmanned balloons and flights with animals, the first tethered balloon flight with humans on board took place on October 15, 1783.</p>
+            <nav class="next-prev">
+                <hr />
+                <a class="next frameless-parachute" href="#frameless-parachute">Next</a>
+            </nav>
+        </article>
+        <article id="frameless-parachute">
+            <header>
+                <h1>The frameless parachute</h1>
+            </header>
+            <p>André-Jacques Garnerin carried out the first jump with a silk parachute on October 22, 1797 at Parc Monceau, Paris. Garnerin's first parachute resembled a closed umbrella before he ascended; at a height of approximately 3,000 feet he severed the rope that connected his parachute to the balloon, and the basket fell to earth. Garnerin emerged uninjured.</p>
+            <nav class="next-prev">
+                <a class="prev manned-flight" href="#manned-flight">Prev</a>
+                <hr />
+                <a class="next english-channel" href="#english-channel">Next</a>
+            </nav>
+        </article>
+        <article id="english-channel">
+            <header>
+                <h1>Over the English Channel</h1>
+            </header>
+            <p>On January 7, 1785, Jean Pierre Blanchard and Dr. John Jeffries made the first flight over the English Channel, traveling from Dover to France. During the crossing the balloon lost altitude, so they began tossing everything in the gondola they possibly could, even their clothes. About two hours after take off, they crossed the French coast clad only in their underwear.</p>
+            <nav class="next-prev">
+                <a class="prev frameless-parachute" href="#frameless-parachute">Prev</a>
+                <hr />
+                <a class="next about" href="#about">Next</a>
+            </nav>
+        </article>
+        <article id="about">
+            <header>
+                <h1>About</h1>
+            </header>
+            <p>This is a jQuery parallax scrolling experiment by Jonathan Nicol. <a href="http://f6design.com/journal/2011/08/06/build-a-parallel-scrolling-website-interface-with-jquery-and-css/">Read about it</a> on my blog.</p>
+            <nav class="next-prev">
+                <a class="prev english-channel" href="#english-channel">Prev</a>
+                <hr />
+            </nav>
+        </article>
+    </div>
+    <div id="parallax-bg3">
+        <img id="bg3-1" src="~/HinhAnhSP/AnhBia/AnhBia-14.png" width="529" height="757" alt="Montgolfier hot air balloon" />
+        <img id="bg3-2" src="~/HinhAnhSP/AnhBia/AnhBia-15.png" width="603" height="583" alt="Frameless parachute" />
+        <img id="bg3-3" src="~/HinhAnhSP/AnhBia/AnhBia-13.png" width="446" height="713" alt="Blanchard's air balloon" />
+        <img id="bg3-4" src="~/HinhAnhSP/AnhBia/AnhBia-11.png" width="1104" height="684" alt="Landscape with trees and cows" />
+    </div>
+
+    <div id="parallax-bg2">
+        <img id="bg2-1" src="http://jonathannicol.com/projects/parallax-scrolling/img/cloud-lg1.png" alt="cloud" />
+        <img id="bg2-2" src="http://jonathannicol.com/projects/parallax-scrolling/img/cloud-lg1.png" alt="cloud" />
+        <img id="bg2-3" src="http://jonathannicol.com/projects/parallax-scrolling/img/cloud-lg1.png" alt="cloud" />
+        <img id="bg2-4" src="http://jonathannicol.com/projects/parallax-scrolling/img/cloud-lg1.png" alt="cloud" />
+        <img id="bg2-5" src="http://jonathannicol.com/projects/parallax-scrolling/img/cloud-lg1.png" alt="cloud" />
+    </div>
+
+    <div id="parallax-bg1">
+        <img id="bg1-1" src="http://jonathannicol.com/projects/parallax-scrolling/img/cloud-lg2.png" alt="cloud" />
+        <img id="bg1-2" src="http://jonathannicol.com/projects/parallax-scrolling/img/cloud-lg2.png" alt="cloud" />
+        <img id="bg1-3" src="http://jonathannicol.com/projects/parallax-scrolling/img/cloud-lg2.png" alt="cloud" />
+        <img id="bg1-4" src="http://jonathannicol.com/projects/parallax-scrolling/img/cloud-lg2.png" alt="cloud" />
+    </div>
+</div>
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
+<script id="rendered-js">
+      $(document).ready(function () {
+
+  redrawDotNav();
+
+  /* Scroll event handler */
+  $(window).bind('scroll', function (e) {
+    parallaxScroll();
+    redrawDotNav();
+  });
+
+  /* Next/prev and primary nav btn click handlers */
+  $('a.manned-flight').click(function () {
+    $('html, body').animate({
+      scrollTop: 0 },
+    1000, function () {
+      parallaxScroll(); // Callback is required for iOS
+    });
+    return false;
+  });
+  $('a.frameless-parachute').click(function () {
+    $('html, body').animate({
+      scrollTop: $('#frameless-parachute').offset().top },
+    1000, function () {
+      parallaxScroll(); // Callback is required for iOS
+    });
+    return false;
+  });
+  $('a.english-channel').click(function () {
+    $('html, body').animate({
+      scrollTop: $('#english-channel').offset().top },
+    1000, function () {
+      parallaxScroll(); // Callback is required for iOS
+    });
+    return false;
+  });
+  $('a.about').click(function () {
+    $('html, body').animate({
+      scrollTop: $('#about').offset().top },
+    1000, function () {
+      parallaxScroll(); // Callback is required for iOS
+    });
+    return false;
+  });
+
+  /* Show/hide dot lav labels on hover */
+  $('nav#primary a').hover(
+  function () {
+    $(this).prev('h1').show();
+  },
+  function () {
+    $(this).prev('h1').hide();
+  });
+
+
+});
+
+/* Scroll the background layers */
+function parallaxScroll() {
+  var scrolled = $(window).scrollTop();
+  $('#parallax-bg1').css('top', 0 - scrolled * .25 + 'px');
+  $('#parallax-bg2').css('top', 0 - scrolled * .5 + 'px');
+  $('#parallax-bg3').css('top', 0 - scrolled * .75 + 'px');
+}
+
+/* Set navigation dots to an active state as the user scrolls */
+function redrawDotNav() {
+  var section1Top = 0;
+  // The top of each section is offset by half the distance to the previous section.
+  var section2Top = $('#frameless-parachute').offset().top - ($('#english-channel').offset().top - $('#frameless-parachute').offset().top) / 2;
+  var section3Top = $('#english-channel').offset().top - ($('#about').offset().top - $('#english-channel').offset().top) / 2;
+  var section4Top = $('#about').offset().top - ($(document).height() - $('#about').offset().top) / 2;;
+  $('nav#primary a').removeClass('active');
+  if ($(document).scrollTop() >= section1Top && $(document).scrollTop() < section2Top) {
+    $('nav#primary a.manned-flight').addClass('active');
+  } else if ($(document).scrollTop() >= section2Top && $(document).scrollTop() < section3Top) {
+    $('nav#primary a.frameless-parachute').addClass('active');
+  } else if ($(document).scrollTop() >= section3Top && $(document).scrollTop() < section4Top) {
+    $('nav#primary a.english-channel').addClass('active');
+  } else if ($(document).scrollTop() >= section4Top) {
+    $('nav#primary a.about').addClass('active');
+  }
+
+}
+      //# sourceURL=pen.js
+</script>
+

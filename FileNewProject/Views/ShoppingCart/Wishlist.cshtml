@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Wishlist";
+    Layout = "~/Views/Shared/HeadFoot.cshtml";
+}
+
+<!--Wishlist Area Strat-->
+<div class="wishlist-area mb-110">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form action="#">
+                    <div class="table-content table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="plantmore-product-remove">Xóa</th>
+                                    <th class="plantmore-product-add-cart">Mã Sản Phẩm</th>
+                                    <th class="cart-product-name">Tên Sản Phẩm</th>
+                                    <th class="plantmore-product-thumbnail">Hình Ảnh</th>
+                                    <th class="plantmore-product-price">Giá Bán</th>
+                                    <th class="plantmore-product-stock-status">Số lượng tồn</th>
+                                  
+                                </tr>
+                            </thead>
+@foreach (var item in Model)
+{
+                            <tbody>
+                                <tr>
+                                    <td>@Html.ActionLink("X", "DeleteWishlist", new { @iMaSP = item.iMaDrone })</td>
+                                    <td class="plantmore-product-add-cart"><a href="#">@item.iMaDrone</a></td>
+                                    <td class="plantmore-product-name"><a href="#">@item.iMaDrone</a></td>
+                                    <td class="plantmore-product-thumbnail"><a href="@Url.Action("ViewDetails", "Home", new { @MaDrone = item.iMaDrone})"><img src="@Url.Content("~/HinhAnhSP/AnhBia/"+item.sAnhBia)" width="90" height="90" alt=""></a></td>
+                                    <td class="plantmore-product-price"><span class="amount">@String.Format("{0:0,0}", item.dDonGia) VNĐ</span></td>
+                                    <td class="plantmore-product-stock-status"><span class="in-stock">100/300</span></td> 
+                                </tr>
+
+                            </tbody>
+}
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Wishlist Area End-->
+
+

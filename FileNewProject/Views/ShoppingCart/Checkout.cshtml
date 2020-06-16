@@ -1,0 +1,167 @@
+﻿@using FileNewProject.Models
+@model List<ShoppingCart>
+
+@{
+    ViewBag.Title = "Checkout";
+    Layout = "~/Views/Shared/HeadFoot.cshtml";
+}
+
+<!--Breadcrumb Tow End-->
+<!--Checkout Area Strat-->
+<div class="checkout-area mb-80">
+    <div class="container">
+     
+        <div class="row">
+            <div class="col-lg-6 col-12">
+@{
+    KhachHang kh = (KhachHang)Session["TaiKhoan"];
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+                <form action="#">
+                    <div class="checkbox-form">
+                        <h3>Thông Tin Khách Hàng</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Mã Khách Hàng<span class="required">*</span></label>
+                                   @kh.MaKH
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Tên Khách Hàng<span class="required">*</span></label>
+                                   @kh.HoTen
+                                </div>
+                            </div>
+                           
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Địa Chỉ<span class="required">*</span></label>
+                                   @kh.DiaChi
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Giới Tính<span class="required">*</span></label>
+                                    @kh.GioiTinh
+                                </div>
+                            </div>
+ 
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Email<span class="required">*</span></label>
+                                   @kh.Email
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Số Điện Thoại<span class="required">*</span></label>
+                                    @kh.DienThoai
+                                </div>
+                            </div>
+                        </div>
+                        @*<div class="different-address">
+                            <div class="order-notes">
+                                <div class="checkout-form-list">
+                                    <label>Yêu Cầu Của Khách Hàng</label>
+                                    <textarea id="checkout-mess" cols="30" rows="10" placeholder="Mời bạn nhập yêu cầu ở đây"></textarea>
+                                </div>
+                            </div>
+                        </div>*@
+                    </div>
+                </form>
+}
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="your-order">
+                    <h3>Giỏ hàng của bạn</h3>
+                    <div class="your-order-table table-responsive">
+                      
+                         <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="cart-product-name">Sản Phẩm</th>
+                                    <th class="cart-product-total">Số lượng</th>
+                                    <th class="cart-product-total">Tổng</th>
+                                </tr>
+                            </thead>
+@foreach (var item in Model)
+{
+                            <tbody>
+
+                                <tr class="cart_item">
+                                    <td class="cart-product-name">@item.sTenDrone<strong class="product-quantity"></strong></td>
+                                    <td class="cart-product-total"><span class="amount">@item.iSoLuong</span></td>
+                                    <td><strong><span class="amount">@String.Format("{0:0,0}", item.dDonGia)</span></strong></td>
+                                </tr>
+                            </tbody>
+}
+
+
+                        </table>
+
+                    </div>
+                    <div class="payment-method">
+                        <div class="payment-accordion">
+                            <div id="accordion">
+                                <div class="card">
+                                    <div class="card-header" id="#payment-1">
+                                        <h5 class="panel-title">
+                                            <a class="" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Ngân Hàng Vietinbank
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                                        <div class="card-body">
+                                          <p>112 000 005 193 –  Tại Vietinbank – Chi nhánh 1 TP.HCM.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="#payment-2">
+                                        <h5 class="panel-title">
+                                            <a class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                Ngân hàng Agribank
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>1600 201 058 790 – Tại Agribank – Chi nhánh Sài Gòn.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="#payment-3">
+                                        <h5 class="panel-title">
+                                            <a class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                Ngân hàng Techcombank
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                           <p> 119 219 681 270 12 – Tại Techcombank– Chi nhánh Thắng lợi TP.HCM</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+@using (Html.BeginForm("Order", "ShoppingCart"))
+{
+                            <div class="order-button-payment">
+                                <input value="Đặt Hàng" type="submit">
+                            </div>
+}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Checkout Area End-->
+
+
