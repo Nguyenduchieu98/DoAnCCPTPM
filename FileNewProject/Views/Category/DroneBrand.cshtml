@@ -1,3 +1,4 @@
+<<<<<<< HEAD:FileNewProject/Views/Category/DroneBrand.cshtml
 ﻿@using FileNewProject.Models;
 @model List<SanPham>
 <link href="~/Content/Css/Index.css" rel="stylesheet" />
@@ -8,12 +9,29 @@
 @{int i = 0;}
 @foreach (var item in Model)
 {
+=======
+﻿@using PagedList.Mvc;
+@using PagedList;
+@model IPagedList<FileNewProject.Models.SanPham>
+    <link href="~/Content/Css/Index.css" rel="stylesheet" />
+    @{
+    ViewBag.Title = "SearchResult";
+    Layout = "~/Views/Shared/Shop.cshtml";
+    }
+
+    <div>@ViewBag.ThongBao</div>
+    <hr />
+    <br />
+    @{int i = 0;}
+    @foreach (var item in Model)
+    {
+>>>>>>> origin/ngotanthong:FileNewProject/Views/Search/SearchResult.cshtml
     i++;
     <div class="col-md-4 col-lg-3">
         <div class="single-product mb-25">
             <div class="product-img img-full">
                 <a href="single-product.html">
-                    <img src="@Url.Content("~/HinhAnhSP/AnhBia/"+item.AnhBia)" alt="">
+                    <img src="@Url.Content(" ~/HinhAnhSP/AnhBia/"+item.AnhBia)" alt="">
                 </a>
                 <span class="onsale">Giảm Giá</span>
                 <div class="product-action">
@@ -25,7 +43,7 @@
                 </div>
             </div>
             <div class="product-content">
-                <h2><a href="@Url.Action("ViewDetails","Home",new { @MaDrone = item.MaSP })">@item.TenSP</a></h2>
+                <h2><a href="@Url.Action(" ViewDetails","Home",new { @MaDrone=item.MaSP })">@item.TenSP</a></h2>
                 <div class="product-price">
                     <div class="price-box">
                         <span class="regular-price">@item.GiaBan</span>
@@ -52,68 +70,68 @@
                                 <div class="tab-pane fade show active" id="single-slide1" role="tabpanel" aria-labelledby="single-slide-tab-1">
                                     <!--Single Product Image Start-->
                                     <div class="single-product-img img-full">
-                                        <img src="@Url.Content("~/HinhAnhSP/AnhBia/"+item.AnhBia)" alt="">
+                                        <img src="@Url.Content(" ~/HinhAnhSP/AnhBia/"+item.AnhBia)" alt="">
                                     </div>
                                     <!--Single Product Image End-->
                                 </div>
                                 <div class="tab-pane fade" id="single-slide2" role="tabpanel" aria-labelledby="single-slide-tab-2">
                                     <!--Single Product Image Start-->
                                     <div class="single-product-img img-full">
-                                        <img src="@Url.Content("~/HinhAnhSP/AnhSl/"+item.AnhSl)" alt="">
+                                        <img src="@Url.Content(" ~/HinhAnhSP/AnhSl/"+item.AnhSl)" alt="">
                                     </div>
                                     <!--Single Product Image End-->
                                 </div>
                                 <div class="tab-pane fade" id="single-slide3" role="tabpanel" aria-labelledby="single-slide-tab-3">
                                     <!--Single Product Image Start-->
                                     <div class="single-product-img img-full">
-                                        <img src="@Url.Content("~/HinhAnhSP/AnhSli/"+item.AnhSli)" alt="">
+                                        <img src="@Url.Content(" ~/HinhAnhSP/AnhSli/"+item.AnhSli)" alt="">
                                     </div>
                                     <!--Single Product Image End-->
                                 </div>
                                 <div class="tab-pane fade" id="single-slide4" role="tabpanel" aria-labelledby="single-slide-tab-4">
                                     <!--Single Product Image Start-->
                                     <div class="single-product-img img-full">
-                                        <img src="@Url.Content("~/HinhAnhSP/AnhSlid/"+item.AnhSlid)" alt="">
+                                        <img src="@Url.Content(" ~/HinhAnhSP/AnhSlid/"+item.AnhSlid)" alt="">
                                     </div>
                                     <!--Single Product Image End-->
                                 </div>
                                 <div class="tab-pane fade" id="single-slide5" role="tabpanel" aria-labelledby="single-slide-tab-4">
                                     <!--Single Product Image Start-->
                                     <div class="single-product-img img-full">
-                                        <img src="@Url.Content("~/HinhAnhSP/AnhSlide/"+item.AnhSlide)" alt="">
+                                        <img src="@Url.Content(" ~/HinhAnhSP/AnhSlide/"+item.AnhSlide)" alt="">
                                     </div>
                                     <!--Single Product Image End-->
                                 </div>
                                 @*<div class="tab-pane fade" id="single-slide6" role="tabpanel" aria-labelledby="single-slide-tab-4">
-                                        <!--Single Product Image Start-->
-                                        <div class="single-product-img img-full">
-                                            <img src="img/single-product/large/single-product6.jpg" alt="">
-                                        </div>
-                                        <!--Single Product Image End-->
-                                    </div>*@
+                                    <!--Single Product Image Start-->
+                                    <div class="single-product-img img-full">
+                                        <img src="img/single-product/large/single-product6.jpg" alt="">
+                                    </div>
+                                    <!--Single Product Image End-->
+                                </div>*@
                             </div>
                             <!--Modal Content End-->
                             <!--Modal Tab Menu Start-->
                             <div class="single-product-menu">
                                 <div class="nav single-slide-menu owl-carousel" role="tablist">
                                     <div class="single-tab-menu img-full">
-                                        <a class="active" data-toggle="tab" id="single-slide-tab-1" href="#single-slide1"><img src="@Url.Content("~/HinhAnhSP/AnhBia/"+item.AnhBia)" alt=""></a>
+                                        <a class="active" data-toggle="tab" id="single-slide-tab-1" href="#single-slide1"><img src="@Url.Content(" ~/HinhAnhSP/AnhBia/"+item.AnhBia)" alt=""></a>
                                     </div>
                                     <div class="single-tab-menu img-full">
-                                        <a data-toggle="tab" id="single-slide-tab-2" href="#single-slide2"><img src="@Url.Content("~/HinhAnhSP/AnhSl/"+item.AnhSl)" alt=""></a>
+                                        <a data-toggle="tab" id="single-slide-tab-2" href="#single-slide2"><img src="@Url.Content(" ~/HinhAnhSP/AnhSl/"+item.AnhSl)" alt=""></a>
                                     </div>
                                     <div class="single-tab-menu img-full">
-                                        <a data-toggle="tab" id="single-slide-tab-3" href="#single-slide3"><img src="@Url.Content("~/HinhAnhSP/AnhSli/"+item.AnhSli)" alt=""></a>
+                                        <a data-toggle="tab" id="single-slide-tab-3" href="#single-slide3"><img src="@Url.Content(" ~/HinhAnhSP/AnhSli/"+item.AnhSli)" alt=""></a>
                                     </div>
                                     <div class="single-tab-menu img-full">
-                                        <a data-toggle="tab" id="single-slide-tab-4" href="#single-slide4"><img src="@Url.Content("~/HinhAnhSP/AnhSlid/"+item.AnhSlid)" alt=""></a>
+                                        <a data-toggle="tab" id="single-slide-tab-4" href="#single-slide4"><img src="@Url.Content(" ~/HinhAnhSP/AnhSlid/"+item.AnhSlid)" alt=""></a>
                                     </div>
                                     <div class="single-tab-menu img-full">
-                                        <a data-toggle="tab" id="single-slide-tab-5" href="#single-slide5"><img src="@Url.Content("~/HinhAnhSP/AnhSlide/"+item.AnhSlide)" alt=""></a>
+                                        <a data-toggle="tab" id="single-slide-tab-5" href="#single-slide5"><img src="@Url.Content(" ~/HinhAnhSP/AnhSlide/"+item.AnhSlide)" alt=""></a>
                                     </div>
                                     @*<div class="single-tab-menu img-full">
-                                            <a data-toggle="tab" id="single-slide-tab-6" href="#single-slide6"><img src="img/single-product/small/single-product6.jpg" alt=""></a>
-                                        </div>*@
+                                        <a data-toggle="tab" id="single-slide-tab-6" href="#single-slide6"><img src="img/single-product/small/single-product6.jpg" alt=""></a>
+                                    </div>*@
                                 </div>
                             </div>
                             <!--Modal Tab Menu End-->
@@ -169,6 +187,21 @@
     </div>
     if (i % 3 == 0)
     {
-        <div style="clear:both"></div>
+    <div style="clear:both"></div>
     }
+<<<<<<< HEAD:FileNewProject/Views/Category/DroneBrand.cshtml
 }
+=======
+    }
+    <div style="clear:both"></div>
+    <br />
+    <hr />
+    <div class="PhanTrang">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+    </div>
+    <br />
+    <hr />
+    <div style="clear:both"></div>
+    <br />
+    <hr />
+>>>>>>> origin/ngotanthong:FileNewProject/Views/Search/SearchResult.cshtml
