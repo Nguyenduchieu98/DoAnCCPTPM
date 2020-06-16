@@ -34,5 +34,52 @@ namespace FileNewProject.Controllers
             ViewBag.lstChuDe = db.NhaSanXuats.ToList();
             return View(lstSanPham);
         }
+	public ActionResult Color()
+        {
+            return PartialView(db.MauSacs.ToList());
+        }
+        public ViewResult DroneColor(int MaMauSac = 0)
+        {
+            //Kiểm tra chủ đề tồn tại hay không
+            MauSac ms = db.MauSacs.SingleOrDefault(n => n.MaMS == MaMauSac);
+            if (ms == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            //Truy xuất danh sách các quyển sách theo chủ đề
+            List<SanPham> lstMauSac = db.SanPhams.Where(n => n.MaMS == MaMauSac).OrderBy(n => n.GiaBan).ToList();
+            if (lstMauSac.Count == 0)
+            {
+                ViewBag.Sach = "Không có sách nào thuộc chủ đề này";
+            }
+            //Gán danh sách chủ để
+            ViewBag.lstChuDe = db.MauSacs.ToList();
+            return View(lstMauSac);
+        }
+
+        public ActionResult Place()
+        {
+            return PartialView(db.NoiSanXuats.ToList());
+        }
+        public ViewResult DronePlace(int MaNoiSanXuat = 0)
+        {
+            //Kiểm tra chủ đề tồn tại hay không
+            NoiSanXuat nsx = db.NoiSanXuats.SingleOrDefault(n => n.MaNSX == MaNoiSanXuat);
+            if (nsx == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            //Truy xuất danh sách các quyển sách theo chủ đề
+            List<SanPham> lstNoiSX = db.SanPhams.Where(n => n.MaNSX == MaNoiSanXuat).OrderBy(n => n.GiaBan).ToList();
+            if (lstNoiSX.Count == 0)
+            {
+                ViewBag.Sach = "Không có sách nào thuộc chủ đề này";
+            }
+            //Gán danh sách chủ để
+            ViewBag.lstChuDe = db.NoiSanXuats.ToList();
+            return View(lstNoiSX);
+        }
     }
 }

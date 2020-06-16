@@ -1,0 +1,7 @@
+﻿@using FileNewProject.Models;
+@model List<NoiSanXuat>
+
+@foreach (var item in Model)
+{
+    <li><a href="@Url.Action("DronePlace", new { @MaNoiSanXuat = item.MaNSX})">@item.TenNSX</a></li>
+}
