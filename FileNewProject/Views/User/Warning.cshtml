@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Warning";
+    Layout = "~/Views/Shared/HeadFoot.cshtml";
+}
+
+
+
+<div class="error-404-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="error-wrapper text-center">
+                    <div class="error-text">
+                        <img src="~/HinhAnh/check.png" />
+                        <h2>THÀNH CÔNG</h2>
+                        <p>Bạn vừa thay đổi một số thông tin quan trọng trong hồ sơ. Vui lòng đăng xuất tài khoản vào đăng nhập lại</p>
+                    </div>
+                    <div class="error-button">
+                        <a href="@Url.Action("Login","User")">Đăng Nhập</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+
+

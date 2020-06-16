@@ -1,42 +1,91 @@
-﻿@{
-	ViewBag.Title = "Login";
-	Layout = "~/Views/Shared/HeadFoot.cshtml";
-	
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/HeadFoot.cshtml";
 }
 <div style="padding-left:400px;">
-	<div class="col-md-6 col-sm-6">
-		<div class="customer-login-register">
-			<div class="form-login-title">
-				<h2>Đăng Nhập</h2>
-				<h4>@ViewBag.ThongBao</h4>
-			</div>
-			@using (Html.BeginForm())
-			{
-				<div class="login-form">
-					<form action="#">
+    <div class="col-md-6 col-sm-6">
+        <div class="customer-login-register">
+            <div class="form-login-title">
+                <h2>Đăng Nhập</h2>
+                <h4>@ViewBag.ThongBao</h4>
+            </div>
+            @using (Html.BeginForm())
+            {
+                <div class="login-form">
+                    <form action="#">
 
-						<div class="form-fild">
-							<p><label>Tài khoản: <span class="required">*</span></label></p>
-							<input name="txtTaiKhoan" value="" type="text">
-						</div>
-						<div class="form-fild">
-							<p><label>Mật khẩu: <span class="required">*</span></label></p>
-							<input name="txtMatKhau" value="" type="password">
-						</div>
-						<div class="login-submit">
-							<button type="submit" class="form-button">Đăng nhập</button>
-							<label>
-								<a href="Registration">Bạn chưa có tài khoản, bấm vào đây</a>
-							</label>
-						</div>
-						<div class="lost-password">
-							<a href="#">Quên mật khẩu?</a>
-						</div>
-						   
-					</form>
-				</div>
-			}
-		</div>
-	</div>
+                        <div class="form-fild">
+                            <p><label>Tài khoản: <span class="required">*</span></label></p>
+                            <input name="txtTaiKhoan" value="" type="text">
+                        </div>
+                        <div class="form-fild">
+                            <p><label>Mật khẩu: <span class="required">*</span></label></p>
+                            <input name="txtMatKhau" value="" type="password">
+                        </div>
+                        <div class="login-submit">
+                            <button type="submit" class="form-button">Đăng nhập</button>
+                            <label>
+                                <a href="Registration">Bạn chưa có tài khoản, bấm vào đây</a>
+                            </label>
+                        </div>
+                        <div class="lost-password">
+                            <a href="#">Quên mật khẩu?</a>
+                        </div>
+
+                    </form>
+                </div>
+            }
+        </div>
+    </div>
 </div>
+
+    @*<div class="w3layouts-two-grids">
+            <div class="mid-class">
+                <div class="img-right-side">
+                    <h3>@ViewBag.ThongBao</h3>
+                    <img src="~/HinhAnh/bglogin.png" class="img-fluid" alt="">
+                </div>
+                <div class="txt-left-side">
+                    <h2> Đăng Nhập </h2>
+                    <form action="#" method="post">
+                        @using (Html.BeginForm())
+                        {
+                            <div class="form-left-to-w3l">
+                                <span class="fas fa-users" aria-hidden="true"></span>
+                                <input name="txtTaiKhoan" type="text" placeholder="Nhập tài khoản" required=""/>
+                                <div class="clear"></div>
+                            </div>
+
+                            <div class="form-left-to-w3l ">
+                                <span class="fa fa-lock" aria-hidden="true"></span>
+                                <input name="txtMatKhau" type="password" placeholder="Nhập mật khẩu" required="" />
+                                <div class="clear"></div>
+                            </div>
+                            <div class="main-two-w3ls">
+                                <div class="left-side-forget">
+
+                                    <a href="#" class="for">Lưu mật khẩu</a>
+                                </div>
+                                <div class="right-side-forget">
+                                    <a href="#" class="for">Quên mật khẩu</a>
+                                </div>
+                            </div>
+                            <div class="btnn">
+                                <button type="submit">Đặng Nhập</button>
+                            </div>
+                        }
+                    </form>
+                    <div class="w3layouts_more-buttn">
+                        <h3>
+                            Bạn chưa có tài khoản?
+                            <a href="@Url.Action("Registration","User")">
+                                Đăng ký ở đây
+                            </a>
+                        </h3>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>*@
 

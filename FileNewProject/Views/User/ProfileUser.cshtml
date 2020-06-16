@@ -1,0 +1,95 @@
+﻿@using FileNewProject.Models;
+@model List<KhachHang>
+@{
+    ViewBag.Title = "ProfileUser";
+    Layout = "~/Views/Shared/HeadFoot.cshtml";
+}
+@{
+    KhachHang kh = (KhachHang)Session["TaiKhoan"];
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="login">
+        <div class="login-form-container">
+            <div class="account-login-form">
+                <form action="#">
+                    <div class="checkbox-form">
+                        <h3>Thông Tin Khách Hàng</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Mã Khách Hàng<span class="required">*</span></label>
+                                    @kh.MaKH
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Tên Khách Hàng<span class="required">*</span></label>
+                                    @kh.HoTen
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Tài Khoản<span class="required">*</span></label>
+                                    @kh.TaiKhoan
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Mật Khẩu<span class="required">*</span></label>
+                                    @kh.MatKhau
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Giới Tính<span class="required">*</span></label>
+                                    @kh.GioiTinh
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Địa Chỉ<span class="required">*</span></label>
+                                    @kh.DiaChi
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Email<span class="required">*</span></label>
+                                    @kh.Email
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Số Điện Thoại<span class="required">*</span></label>
+                                    @kh.DienThoai
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Ngày Sinh<span class="required">*</span></label>
+                                    @kh.NgaySinh
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-list-action">
+                            <ul>
+                                | @Html.ActionLink("Chỉnh sửa", "EditProfile", new { @MaKhach = kh.MaKH }) |
+                            </ul>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+}
