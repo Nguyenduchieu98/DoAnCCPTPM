@@ -1,0 +1,195 @@
+﻿@model FileNewProject.Models.SanPham
+@{
+    ViewBag.Title = "CreateProduct";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+<div class="breadcrumb-tow mb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-title">
+                    <h1>Thêm Sản Phẩm Mới</h1>
+                </div>
+                <div class="breadcrumb-content breadcrumb-content-tow">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">Shopping Cart</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+   
+        <div class="col-md-6 col-sm-6">
+@using (Html.BeginForm("CreateProduct", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+            <div class="customer-login-register">    
+                    @Html.AntiForgeryToken()
+                    <div style="padding-left:400px;">
+                        <div class="form-horizontal">
+                            <hr />
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-fild">
+                                @Html.LabelFor(model => model.MaSP, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.MaSP, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.MaSP, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-fild">
+                                @Html.LabelFor(model => model.TenSP, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.TenSP, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.TenSP, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-fild">
+                                @Html.LabelFor(model => model.GiaBan, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.GiaBan, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.GiaBan, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-fild">
+                                @Html.LabelFor(model => model.AnhBia, new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @*Name của thẻ input file phải trùng tên với tham số bên controller*@
+                                    <input type="file" name="fileUpload">
+                                    @*Thông báo trùng*@
+                                    @ViewBag.ThongBao
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.AnhSl, new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @*Name của thẻ input file phải trùng tên với tham số bên controller*@
+                                    <input type="file" name="fileUpload1">
+                                    @*Thông báo trùng*@
+                                    @ViewBag.ThongBao
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.AnhSli, new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @*Name của thẻ input file phải trùng tên với tham số bên controller*@
+                                    <input type="file" name="fileUpload2">
+                                    @*Thông báo trùng*@
+                                    @ViewBag.ThongBao
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.AnhSlid, new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @*Name của thẻ input file phải trùng tên với tham số bên controller*@
+                                    <input type="file" name="fileUpload3">
+                                    @*Thông báo trùng*@
+                                    @ViewBag.ThongBao
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.AnhSlide, new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @*Name của thẻ input file phải trùng tên với tham số bên controller*@
+                                    <input type="file" name="fileUpload4">
+                                    @*Thông báo trùng*@
+                                    @ViewBag.ThongBao
+                                </div>
+                            </div>
+
+                            <div class="form-fild">
+                                @Html.LabelFor(model => model.XuatXu, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.XuatXu, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.XuatXu, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-fild">
+                                @Html.LabelFor(model => model.Mau, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.Mau, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Mau, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-fild">
+                                @Html.LabelFor(model => model.Pin, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.Pin, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Pin, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-fild">
+                                @Html.LabelFor(model => model.Camera, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.Camera, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Camera, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-fild">
+                                @Html.LabelFor(model => model.ThoiGianBay, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.ThoiGianBay, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.ThoiGianBay, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-fild">
+                                @Html.LabelFor(model => model.ThoiGianSac, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.ThoiGianSac, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.ThoiGianSac, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-fild">
+                                @Html.LabelFor(model => model.TrongLuong, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.TrongLuong, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.TrongLuong, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-fild">
+                                @Html.LabelFor(model => model.MaNSX, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.DropDownList("MaNSX")
+                                </div>
+                            </div>
+
+                            <div class="form-fild">
+                                @Html.LabelFor(model => model.MaMS, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.DropDownList("MaMS")
+                                </div>
+                            </div>
+
+                            <div class="form-fild">
+                                @Html.LabelFor(model => model.MaNhaSX, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.DropDownList("MaNhaSX")
+                                </div>
+                            </div>
+
+                            <div class="form-fild">
+                                <div class="col-md-offset-2 col-md-12">
+                                    <input type="submit" value="Tạo" class="btn btn-default" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               
+            </div>
+}
+        </div>
