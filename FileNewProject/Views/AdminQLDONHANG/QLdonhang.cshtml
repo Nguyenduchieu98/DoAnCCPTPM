@@ -1,0 +1,59 @@
+﻿@model IEnumerable<FileNewProject.Models.ChiTietDonHang>
+
+@{
+    ViewBag.Title = "QLdonhang";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2 style="text-align:center;">Quản Lý Đơn Hàng</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Mã đơn hàng
+        </th>
+        <th>
+            Tên khách hàng
+        </th>
+        <th>
+            Địa chỉ
+        </th>
+        <th>
+            Tên sản phẩm
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Đơn giá
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaDonHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonHang.KhachHang.HoTen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonHang.KhachHang.DiaChi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SanPham.TenSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonGia)
+            </td>
+
+        </tr>
+    }
+
+</table>
