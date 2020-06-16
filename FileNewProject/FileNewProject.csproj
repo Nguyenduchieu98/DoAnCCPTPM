@@ -461,6 +461,8 @@
     <Content Include="Views\Shared\HeadFoot.cshtml" />
     <Content Include="Views\Shared\Admin.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\User\Registration.cshtml" />
+    <Content Include="Views\User\Thank.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
