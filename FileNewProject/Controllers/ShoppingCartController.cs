@@ -1,11 +1,10 @@
-<<<<<<< HEAD
 ﻿
 using FileNewProject.Models;
 using PayPal.Api;
 using System;
-=======
+
 ﻿using System;
->>>>>>> Hieu
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,7 +14,7 @@ namespace FileNewProject.Controllers
 {
     public class ShoppingCartController : Controller
     {
-<<<<<<< HEAD
+
         DoChoiCongNgheEntities1 db = new DoChoiCongNgheEntities1();
         private PayPal.Api.Payment payment;
         // GET: ShoppingCart
@@ -452,12 +451,11 @@ namespace FileNewProject.Controllers
             this.payment = new Payment() { id = paymentId };
             return this.payment.Execute(apiContext, paymentExecution);
         }
-=======
+
         // GET: ShoppingCart
         public ActionResult Index()
         {
             return View();
         }
->>>>>>> Hieu
     }
 }
