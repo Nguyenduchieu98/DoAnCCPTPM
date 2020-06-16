@@ -1,0 +1,74 @@
+﻿@using PagedList.Mvc;
+@using PagedList;
+@model IPagedList<FileNewProject.Models.SanPham>
+<link href="~/Content/Css/Index.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "SearchAdminResult";
+    Layout = "~/Views/Shared/HeadFoot.cshtml";
+}
+
+@{int i = 0;}
+@foreach (var item in Model)
+{
+    i++;
+    <div class="product-list-item mb-40">
+        <div class="row">
+            <!--Single List Product Start-->
+            <div class="col-md-4">
+                <div class="single-product">
+                    <div class="product-img img-full">
+                        <a href="@Url.Action("ShowProduct","Admin",new { @MaDrone = item.MaSP })">
+                            <img src="@Url.Content("~/HinhAnhSP/AnhBia/"+item.AnhBia)" alt="">
+                        </a>
+                        <span class="onsale">Mới</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="product-content shop-list">
+                    <h2><a href="@Url.Action("ShowProduct","Admin",new { @MaDrone = item.MaSP })">@item.TenSP</a></h2>
+                    <div class="product-reviews">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <div class="product-description">
+                        <p>Nơi lắp ráp: @item.XuatXu</p>
+                        <p>Màu sắc: @item.Mau</p>
+                        <p>Camera: @item.Camera</p>
+                        <p>Trọng lượng: @item.TrongLuong</p>
+                    </div>
+                    <div class="product-price">
+                        <div class="add-to-link">
+                            <button class="product-btn" data-text="add to cart">@item.GiaBan</button>
+                        </div>
+                        @*<div class="price-box">
+                                <span class="regular-price">@item.GiaBan</span>
+                            </div>*@
+                    </div>
+                    <div class="product-list-action">
+                        <ul>
+                            | @Html.ActionLink("Chỉnh sửa","EditProduct","Admin", new { @MaDrone = item.MaSP }) |
+                            @Html.ActionLink("Hiển thị", "ShowProduct", new { @MaDrone = item.MaSP }) |
+                            @Html.ActionLink("Xóa", "DeleteProduct", new { @MaDrone = item.MaSP }) |
+                            @Html.ActionLink("Thêm", "CreateProduct", new { @MaDrone = item.MaSP }) |
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--Single List Product End-->
+        </div>
+    </div>
+    if (i % 3 == 0)
+    {
+        <div style="clear:both"></div>
+    }
+}
+
+<div class="PhanTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Admin", new { page = page }))
+</div>
+
+

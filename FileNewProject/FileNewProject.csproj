@@ -3272,10 +3272,14 @@
     <Compile Include="Commom\Login.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\SomethingsController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminQLDONHANGController.cs" />
+    <Compile Include="Controllers\StatisticalController.cs" />
+    <Compile Include="Controllers\TimKiemController.cs" />
+    <Compile Include="Controllers\TimKiemMoiController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -3366,6 +3370,11 @@
     <Content Include="Views\User\Registration.cshtml" />
     <Content Include="Views\User\Thank.cshtml" />
     <Content Include="Views\User\Warning.cshtml" />
+    <Content Include="Views\Search\SearchAdminResult.cshtml" />
+    <Content Include="Views\Search\SearchResult.cshtml" />
+    <Content Include="Views\TimKiem\KetQuaTimkiem.cshtml" />
+    <Content Include="Views\TimKiemMoi\KetQuaTimkiem.cshtml" />
+    <Content Include="Views\Statistical\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
