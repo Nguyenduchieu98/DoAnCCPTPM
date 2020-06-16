@@ -282,7 +282,6 @@ D:\DoAnCCPTPM\FileNewProject\bin\System.Web.Webpages.Deployment.xml
 D:\DoAnCCPTPM\FileNewProject\bin\System.Web.Webpages.Razor.xml
 D:\DoAnCCPTPM\FileNewProject\bin\System.Web.Helpers.xml
 D:\DoAnCCPTPM\FileNewProject\bin\System.Web.Mvc.xml
-D:\DoAnCCPTPM\FileNewProject\obj\Debug\FileNewProject.csprojAssemblyReference.cache
 D:\DoAnCCPTPM\FileNewProject\obj\Debug\FileNewProject.csproj.CoreCompileInputs.cache
 D:\DoAnCCPTPM\FileNewProject\obj\Debug\FileNewProject.csproj.CopyComplete
 D:\DoAnCCPTPM\FileNewProject\obj\Debug\FileNewProject.dll
