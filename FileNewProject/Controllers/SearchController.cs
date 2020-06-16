@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FileNewProject.Models;
+using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -43,6 +45,7 @@ namespace FileNewProject.Controllers
             ViewBag.ThongBao = "Đã tìm thấy " + lstKQTK.Count + " kết quả!";
             return View(lstKQTK.OrderBy(n => n.TenSP).ToPagedList(pageNumber, pageSize));
         }
+
 
     }
 }
