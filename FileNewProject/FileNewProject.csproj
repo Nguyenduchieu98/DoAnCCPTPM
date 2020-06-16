@@ -471,7 +471,7 @@
     <Content Include="Views\Shared\Admin.cshtml" />
 
     <Content Include="Views\User\Login.cshtml" />
-<<<<<<< HEAD
+
 
     <Content Include="Views\Home\Index.cshtml" />
 
@@ -479,10 +479,9 @@
 
     <Content Include="Views\Category\Brand.cshtml" />
 
-=======
     <Content Include="Views\User\Registration.cshtml" />
     <Content Include="Views\User\Thank.cshtml" />
->>>>>>> origin/BuiDuyKhanh
+
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
