@@ -4,7 +4,7 @@
 
 @{
     ViewBag.Title = "ViewDetails";
-    Layout = null;
+    Layout = "~/Views/Shared/HeadFoot.cshtml";
 }
 <div class="wrapper">
     <!--Single Product Area Start-->
@@ -69,6 +69,26 @@
                         </div>
                         <!--Product Tab Content End-->
                         <!--Product Tab Menu Start-->
+                        <div class="product-menu">
+                            <div class="nav product-tab-menu">
+                                <div class="product-details-img">
+                                    <a class="active" data-toggle="tab" href="#product1"><img src="@Url.Content("~/HinhAnhSP/AnhBia/"+Model.AnhBia)" alt=""></a>
+                                </div>
+                                <div class="product-details-img">
+                                    <a data-toggle="tab" href="#product2"><img src="@Url.Content("~/HinhAnhSP/AnhSl/"+Model.AnhSl)" alt=""></a>
+                                </div>
+                                <div class="product-details-img">
+                                    <a data-toggle="tab" href="#product3"><img src="@Url.Content("~/HinhAnhSP/AnhSli/"+Model.AnhSli)" alt=""></a>
+                                </div>
+                                <div class="product-details-img">
+                                    <a data-toggle="tab" href="#product4"><img src="@Url.Content("~/HinhAnhSP/AnhSlid/"+Model.AnhSlid)" alt=""></a>
+                                </div>
+                                <div class="product-details-img">
+                                    <a data-toggle="tab" href="#product5"><img src="@Url.Content("~/HinhAnhSP/AnhSlide/"+Model.AnhSlide)" alt=""></a>
+                                </div>
+
+                            </div>
+                        </div>
                         <!--Product Tab Menu End-->
                     </div>
                 </div>
@@ -78,7 +98,13 @@
                     <div class="product-details-content">
 
                         <h2>@Model.TenSP</h2>
-
+                        <div class="single-product-reviews">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
                         <div class="single-product-price">
                             <span class="regular-price">@String.Format("{0:0,0}", @Model.GiaBan)</span>
                         </div>
@@ -97,7 +123,7 @@
                                 <div class="product-quantity">
                                     <input value="1" type="number">
                                 </div>
-
+      
                             </form>
                             @using (Html.BeginForm("InsertShoppingCart", "ShoppingCart", new { @iMaDrone = Model.MaSP, @strURL = Request.Url.ToString() }))
                             {
@@ -114,7 +140,26 @@
                             }
 
                         </div>
-
+                        <div class="wishlist-compare-btn">
+                            <a href="https://www.youtube.com/watch?v=uaEj5UMEo1Y" class="video wave">Xem Video</a>
+                        </div>
+                        <div class="product-meta">
+                            <span class="posted-in">
+                                Thể loại:
+                                <a href="#">Flycam</a>,
+                                <a href="#">Đồ chơi công nghệ</a>
+                            </span>
+                        </div>
+                        <div class="single-product-sharing">
+                            <h3>Chia sẻ thông tin sản phẩm</h3>
+                            <ul>
+                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fab fa-pinterest-square"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                     <!--Product Details Content End-->
                 </div>
@@ -122,20 +167,57 @@
         </div>
     </div>
     <!--Single Product Area End-->
+
     <!--Popup video Start-->
 
-    <script src="~/scripts/Js/jquery.min.js"></script>
+        <script src="~/scripts/Js/jquery.min.js"></script>
 
     <script src="~/scripts/Js/jquery.magnific-popup.min.js"></script>
-    <script id="rendered-js">
+        <script id="rendered-js">
             $('.video').magnificPopup({
                 type: 'iframe'
             });
 
-    </script>
+        </script>
+ 
+        <!--Popup video End-->
+        <!--Product Description Review Area Start-->
+        <div class="product-description-review-area mb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="product-review-tab">
+                            <!--Review And Description Tab Menu Start-->
+                            <ul class="nav dec-and-review-menu">
+                                <li>
+                                    <a class="active" data-toggle="tab" href="#description">Mô tả</a>
+                                </li>
+                                <li>
+                                    <a data-toggle="tab" href="#reviews">Đánh Giá</a>
+                                </li>
+                            </ul>
+                            <!--Review And Description Tab Menu End-->
+                            <!--Review And Description Tab Content Start-->
+                            <div class="tab-content product-review-content-tab" id="myTabContent-4">
+                                <div class="tab-pane fade active show" id="description">
+                                    <div class="single-product-description">
+                                        <p>@Model.TenSP là chiếc máy bay điều khiển nhỏ gọn nhưng vô cùng mạnh mẽ, giúp bạn có thể thoải mái tung hành những ý tưởng trên bầu trời một cách dễ dàng mà không gặp bất kỳ trở ngại nào. Những chi tiết phức tạp được ẩn sau kích thước nhỏ gọn, tất cả đã tạo nên DJI Mavic Pro - một trong những chiếc camera bay tinh xảo nhất. Với bộ vi xử lý 24 nhân hiệu năng cao, hệ thống truyền tải dữ liệu hoàn toàn mới với phạm vi hoạt động lên đến 7km. Bên cạnh đó, DJI Mavic Pro còn được trang bị 5 cảm biến hình ảnh, camera 4K chống rung và gimbal 3 trục.</p>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="reviews">
+                                    <div class="fb-like" data-href="http://localhost:59143/Home/ViewDetails" data-width="450" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                                    <br />
+                                    <div class="fb-comments" data-href="http://localhost:59143/Home/ViewDetails" data-width="670" data-numposts="5"></div>
 
-    <!--Popup video End-->
-    <!--Product Description Review Area Start-->
 
-</div>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                        <!--Review And Description Tab Content End-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 <!--Product Description Review Area Start-->
