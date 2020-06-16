@@ -471,6 +471,10 @@
     <Content Include="Views\ShoppingCart\ShoppingCartPartial.cshtml" />
     <Content Include="Views\ShoppingCart\SuccessView.cshtml" />
     <Content Include="Views\ShoppingCart\Wishlist.cshtml" />
+    <Content Include="Views\Somethings\FAQ.cshtml" />
+    <Content Include="Views\Somethings\Gallery.cshtml" />
+    <Content Include="Views\Somethings\Services.cshtml" />
+    <Content Include="Views\Somethings\Use.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -480,7 +484,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Somethings\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
