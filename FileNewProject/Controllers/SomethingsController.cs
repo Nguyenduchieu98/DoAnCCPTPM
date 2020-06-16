@@ -8,22 +8,24 @@ namespace FileNewProject.Controllers
 {
     public class SomethingsController : Controller
     {
-        // GET: Somethings
-        public ActionResult FAQ()
+        public class SomethingsController : Controller
         {
-            return View();
+            // GET: Somethings
+            public ActionResult FAQ()
+            {
+                return View();
+            }
+            public ActionResult Gallery()
+            {
+                return View();
+            }
+            public ActionResult Services()
+            {
+                return View();
+            }
+            public ActionResult Use()
+            {
+                return View();
+            }
         }
-        public ActionResult Gallery()
-        {
-            return View();
-        }
-        public ActionResult Services()
-        {
-            return View();
-        }
-        public ActionResult Use()
-        {
-            return View();
-        }
-    }
 }
