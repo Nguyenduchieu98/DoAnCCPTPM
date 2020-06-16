@@ -10,7 +10,7 @@ namespace FileNewProject.Controllers
     public class UserController : Controller
     {
         DoChoiCongNgheEntities1 db = new DoChoiCongNgheEntities1();
-        // GET: User
+        
 
 
         [HttpGet]
