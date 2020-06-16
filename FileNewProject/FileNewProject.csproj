@@ -3278,7 +3278,11 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminQLDONHANGController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+<<<<<<< HEAD
 >>>>>>> origin/trangchu
+=======
+>>>>>>> trangchu
+>>>>>>> 31e7245377f800cb6a996700f1a0618065ff4c97
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -3354,16 +3358,23 @@
     <Content Include="Views\ShoppingCart\ShoppingCartPartial.cshtml" />
     <Content Include="Views\ShoppingCart\SuccessView.cshtml" />
     <Content Include="Views\ShoppingCart\Wishlist.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Somethings\FAQ.cshtml" />
     <Content Include="Views\Somethings\Gallery.cshtml" />
     <Content Include="Views\Somethings\Services.cshtml" />
     <Content Include="Views\Somethings\Use.cshtml" />
 =======
+>>>>>>> 31e7245377f800cb6a996700f1a0618065ff4c97
+=======
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Admin\Admin.cshtml" />
     <Content Include="Views\Admin\CreateProduct.cshtml" />
     <Content Include="Views\AdminQLDONHANG\QLdonhang.cshtml" />
+<<<<<<< HEAD
 >>>>>>> origin/trangchu
+=======
+>>>>>>> trangchu
+>>>>>>> 31e7245377f800cb6a996700f1a0618065ff4c97
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

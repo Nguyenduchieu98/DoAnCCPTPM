@@ -406,4 +406,8 @@ C:\Users\PC\Desktop\Git\DoAnCCPTPM\FileNewProject\obj\Debug\FileNewProject.cspro
 C:\Users\PC\Desktop\Git\DoAnCCPTPM\FileNewProject\obj\Debug\FileNewProject.csproj.CopyComplete
 C:\Users\PC\Desktop\Git\DoAnCCPTPM\FileNewProject\obj\Debug\FileNewProject.dll
 C:\Users\PC\Desktop\Git\DoAnCCPTPM\FileNewProject\obj\Debug\FileNewProject.pdb
+<<<<<<< HEAD
 >>>>>>> origin/trangchu
+=======
+>>>>>>> trangchu
+>>>>>>> 31e7245377f800cb6a996700f1a0618065ff4c97
