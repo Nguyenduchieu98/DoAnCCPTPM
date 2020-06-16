@@ -123,7 +123,7 @@
                                 <div class="product-quantity">
                                     <input value="1" type="number">
                                 </div>
-      
+
                             </form>
                             @using (Html.BeginForm("InsertShoppingCart", "ShoppingCart", new { @iMaDrone = Model.MaSP, @strURL = Request.Url.ToString() }))
                             {
@@ -167,57 +167,56 @@
         </div>
     </div>
     <!--Single Product Area End-->
-
     <!--Popup video Start-->
 
-        <script src="~/scripts/Js/jquery.min.js"></script>
+    <script src="~/scripts/Js/jquery.min.js"></script>
 
     <script src="~/scripts/Js/jquery.magnific-popup.min.js"></script>
-        <script id="rendered-js">
+    <script id="rendered-js">
             $('.video').magnificPopup({
                 type: 'iframe'
             });
 
-        </script>
- 
-        <!--Popup video End-->
-        <!--Product Description Review Area Start-->
-        <div class="product-description-review-area mb-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="product-review-tab">
-                            <!--Review And Description Tab Menu Start-->
-                            <ul class="nav dec-and-review-menu">
-                                <li>
-                                    <a class="active" data-toggle="tab" href="#description">Mô tả</a>
-                                </li>
-                                <li>
-                                    <a data-toggle="tab" href="#reviews">Đánh Giá</a>
-                                </li>
-                            </ul>
-                            <!--Review And Description Tab Menu End-->
-                            <!--Review And Description Tab Content Start-->
-                            <div class="tab-content product-review-content-tab" id="myTabContent-4">
-                                <div class="tab-pane fade active show" id="description">
-                                    <div class="single-product-description">
-                                        <p>@Model.TenSP là chiếc máy bay điều khiển nhỏ gọn nhưng vô cùng mạnh mẽ, giúp bạn có thể thoải mái tung hành những ý tưởng trên bầu trời một cách dễ dàng mà không gặp bất kỳ trở ngại nào. Những chi tiết phức tạp được ẩn sau kích thước nhỏ gọn, tất cả đã tạo nên DJI Mavic Pro - một trong những chiếc camera bay tinh xảo nhất. Với bộ vi xử lý 24 nhân hiệu năng cao, hệ thống truyền tải dữ liệu hoàn toàn mới với phạm vi hoạt động lên đến 7km. Bên cạnh đó, DJI Mavic Pro còn được trang bị 5 cảm biến hình ảnh, camera 4K chống rung và gimbal 3 trục.</p>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="reviews">
-                                    <div class="fb-like" data-href="http://localhost:59143/Home/ViewDetails" data-width="450" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
-                                    <br />
-                                    <div class="fb-comments" data-href="http://localhost:59143/Home/ViewDetails" data-width="670" data-numposts="5"></div>
+    </script>
 
-
-                                 
+    <!--Popup video End-->
+    <!--Product Description Review Area Start-->
+    <div class="product-description-review-area mb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-review-tab">
+                        <!--Review And Description Tab Menu Start-->
+                        <ul class="nav dec-and-review-menu">
+                            <li>
+                                <a class="active" data-toggle="tab" href="#description">Mô tả</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#reviews">Đánh Giá</a>
+                            </li>
+                        </ul>
+                        <!--Review And Description Tab Menu End-->
+                        <!--Review And Description Tab Content Start-->
+                        <div class="tab-content product-review-content-tab" id="myTabContent-4">
+                            <div class="tab-pane fade active show" id="description">
+                                <div class="single-product-description">
+                                    <p>@Model.TenSP là chiếc máy bay điều khiển nhỏ gọn nhưng vô cùng mạnh mẽ, giúp bạn có thể thoải mái tung hành những ý tưởng trên bầu trời một cách dễ dàng mà không gặp bất kỳ trở ngại nào. Những chi tiết phức tạp được ẩn sau kích thước nhỏ gọn, tất cả đã tạo nên DJI Mavic Pro - một trong những chiếc camera bay tinh xảo nhất. Với bộ vi xử lý 24 nhân hiệu năng cao, hệ thống truyền tải dữ liệu hoàn toàn mới với phạm vi hoạt động lên đến 7km. Bên cạnh đó, DJI Mavic Pro còn được trang bị 5 cảm biến hình ảnh, camera 4K chống rung và gimbal 3 trục.</p>
                                 </div>
                             </div>
+                            <div class="tab-pane fade" id="reviews">
+                                <div class="fb-like" data-href="http://localhost:59143/Home/ViewDetails" data-width="450" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                                <br />
+                                <div class="fb-comments" data-href="http://localhost:59143/Home/ViewDetails" data-width="670" data-numposts="5"></div>
+
+
+
+                            </div>
                         </div>
-                        <!--Review And Description Tab Content End-->
                     </div>
+                    <!--Review And Description Tab Content End-->
                 </div>
             </div>
         </div>
     </div>
+</div>
 <!--Product Description Review Area Start-->

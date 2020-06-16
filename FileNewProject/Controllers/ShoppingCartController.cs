@@ -1,20 +1,14 @@
-﻿
-using FileNewProject.Models;
-using PayPal.Api;
-using System;
-
 ﻿using System;
-
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using PayPal.Api;
+using FileNewProject.Models;
 namespace FileNewProject.Controllers
 {
     public class ShoppingCartController : Controller
     {
-
         DoChoiCongNgheEntities1 db = new DoChoiCongNgheEntities1();
         private PayPal.Api.Payment payment;
         // GET: ShoppingCart
@@ -450,12 +444,6 @@ namespace FileNewProject.Controllers
             var paymentExecution = new PaymentExecution() { payer_id = payerId };
             this.payment = new Payment() { id = paymentId };
             return this.payment.Execute(apiContext, paymentExecution);
-        }
-
-        // GET: ShoppingCart
-        public ActionResult Index()
-        {
-            return View();
         }
     }
 }

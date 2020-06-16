@@ -8,8 +8,8 @@ namespace FileNewProject.Controllers
 {
     public class SomethingsController : Controller
     {
-        public class SomethingsController : Controller
-        {
+  
+        
             // GET: Somethings
             public ActionResult FAQ()
             {
@@ -28,4 +28,4 @@ namespace FileNewProject.Controllers
                 return View();
             }
         }
-}
+    }
