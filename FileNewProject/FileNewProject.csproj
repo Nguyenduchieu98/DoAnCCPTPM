@@ -388,20 +388,14 @@
     <Content Include="ThuVien\7.jpg" />
     <Content Include="ThuVien\8.jpg" />
     <Content Include="ThuVien\9.jpg" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Commom\CommonConstants.cs" />
     <Compile Include="Commom\Login.cs" />
-    <Compile Include="Controllers\SomethingsController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
-    <Compile Include="Controllers\TimKiemMoiController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -467,17 +461,15 @@
     <Content Include="Views\Shared\Shop.cshtml" />
     <Content Include="Views\Shared\HeadFoot.cshtml" />
     <Content Include="Views\Shared\Admin.cshtml" />
-    <Content Include="Views\User\Login.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Search\SearchResult.cshtml" />
     <Content Include="Views\Category\Brand.cshtml" />
-    <Content Include="Views\User\Registration.cshtml" />
-    <Content Include="Views\User\Thank.cshtml" />
-    <Content Include="Views\TimKiemMoi\KetQuaTimkiem.cshtml" />
-    <Content Include="Views\Somethings\FAQ.cshtml" />
-    <Content Include="Views\Somethings\Gallery.cshtml" />
-    <Content Include="Views\Somethings\Services.cshtml" />
-    <Content Include="Views\Somethings\Use.cshtml" />
+    <Content Include="Views\ShoppingCart\Checkout.cshtml" />
+    <Content Include="Views\ShoppingCart\EditShoppingCart.cshtml" />
+    <Content Include="Views\ShoppingCart\FailureView.cshtml" />
+    <Content Include="Views\ShoppingCart\Notification.cshtml" />
+    <Content Include="Views\ShoppingCart\ShoppingCart.cshtml" />
+    <Content Include="Views\ShoppingCart\ShoppingCartPartial.cshtml" />
+    <Content Include="Views\ShoppingCart\SuccessView.cshtml" />
+    <Content Include="Views\ShoppingCart\Wishlist.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
