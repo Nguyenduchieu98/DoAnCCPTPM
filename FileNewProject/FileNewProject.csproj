@@ -401,13 +401,13 @@
    <Compile Include="Controllers\HomeController.cs" />
 
     <Compile Include="Controllers\SearchController.cs" />
-<<<<<<< HEAD
+
 
     <Compile Include="Controllers\CategoryController.cs" />
 
-=======
+
     <Compile Include="Controllers\TimKiemMoiController.cs" />
->>>>>>> origin/ngotanthong
+
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -480,16 +480,16 @@
     <Content Include="Views\Home\Index.cshtml" />
 
     <Content Include="Views\Search\SearchResult.cshtml" />
-<<<<<<< HEAD
+
 
     <Content Include="Views\Category\Brand.cshtml" />
 
     <Content Include="Views\User\Registration.cshtml" />
     <Content Include="Views\User\Thank.cshtml" />
 
-=======
+
     <Content Include="Views\TimKiemMoi\KetQuaTimkiem.cshtml" />
->>>>>>> origin/ngotanthong
+
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
