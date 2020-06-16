@@ -69,7 +69,6 @@
                         </div>
                         <!--Product Tab Content End-->
                         <!--Product Tab Menu Start-->
-                        
                         <!--Product Tab Menu End-->
                     </div>
                 </div>
@@ -79,7 +78,7 @@
                     <div class="product-details-content">
 
                         <h2>@Model.TenSP</h2>
-                       
+
                         <div class="single-product-price">
                             <span class="regular-price">@String.Format("{0:0,0}", @Model.GiaBan)</span>
                         </div>
@@ -98,7 +97,7 @@
                                 <div class="product-quantity">
                                     <input value="1" type="number">
                                 </div>
-      
+
                             </form>
                             @using (Html.BeginForm("InsertShoppingCart", "ShoppingCart", new { @iMaDrone = Model.MaSP, @strURL = Request.Url.ToString() }))
                             {
@@ -123,13 +122,20 @@
         </div>
     </div>
     <!--Single Product Area End-->
-
     <!--Popup video Start-->
 
+    <script src="~/scripts/Js/jquery.min.js"></script>
 
- 
-        <!--Popup video End-->
-        <!--Product Description Review Area Start-->
-  
-    </div>
+    <script src="~/scripts/Js/jquery.magnific-popup.min.js"></script>
+    <script id="rendered-js">
+            $('.video').magnificPopup({
+                type: 'iframe'
+            });
+
+    </script>
+
+    <!--Popup video End-->
+    <!--Product Description Review Area Start-->
+
+</div>
 <!--Product Description Review Area Start-->
